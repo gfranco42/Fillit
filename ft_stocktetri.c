@@ -6,7 +6,7 @@
 /*   By: gfranco <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/18 12:10:47 by gfranco           #+#    #+#             */
-/*   Updated: 2018/06/19 15:44:12 by gfranco          ###   ########.fr       */
+/*   Updated: 2018/06/29 16:06:01 by gfranco          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,21 @@
 
 t_stock     ft_stocktetri(char *file, int i)
 {
-    t_stock     *tetriminos;
-    t_stock     *start;
-    int         a;
 
-    while (a < 3)
-    {
-        tetriminos = (t_stock)malloc(sizeof(t_stock));
-        tetriminos.tetri = ft_memtetri(file, i);
-        tetriminos = tetriminos->next;
-        a++;
-    }
-    return (start->begin);
+}
+
+t_stock		ft_init()
+{
+    t_stock     *tetriminos;
+    t_begin     *start;
+
+	if (!(tetriminos = (t_stock*)malloc(sizeof(t_stock*))))
+		exit(EXIT_FAILURE);
+	if (!(start = (t_begin*)malloc(sizeof(t_begin*))))
+		exit(EXIT_FAILURE);
+	tetriminos->tetri = ft_memtetri(file, i);
+	tetriminos->next = NULL;
+	start->begin = tetriminos;
+
+	return (start);
 }

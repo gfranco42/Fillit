@@ -6,7 +6,7 @@
 /*   By: gfranco <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/18 12:00:06 by gfranco           #+#    #+#             */
-/*   Updated: 2018/06/19 15:44:01 by gfranco          ###   ########.fr       */
+/*   Updated: 2018/06/29 15:18:46 by gfranco          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,8 +41,11 @@ typedef struct	s_stock
 typedef struct  s_begin
 {
     t_stock     *begin;
-}
+}				t_begin;;
 
 void			ft_error(int argc);
+t_tetri			ft_memtetri(char *file, int i);
+char			**ft_strsplit(char const *s, char c);
+char			*ft_strjoin(char const *s1, char const *s2);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: nakorchi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/03 02:25:49 by nakorchi          #+#    #+#             */
-/*   Updated: 2018/06/29 14:48:26 by nakorchi         ###   ########.fr       */
+/*   Updated: 2018/06/29 16:05:39 by gfranco          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "fillit.h"
@@ -51,7 +51,7 @@ int		check_col(char **g, int j, int i)
 	return (0);
 }
 
-int		check_t(char g, int i, int j)
+int		check_t(char **g, int i, int j)
 {
 	int		signs;
 	int		tmp;
