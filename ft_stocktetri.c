@@ -12,4 +12,18 @@
 
 #include "fillit.h"
 
-t_
+t_stock     ft_stocktetri(char *file, int i)
+{
+    t_stock     *tetriminos;
+    t_stock     *start;
+    int         a;
+
+    while (a < 3)
+    {
+        tetriminos = (t_stock)malloc(sizeof(t_stock));
+        tetriminos.tetri = ft_memtetri(file, i);
+        tetriminos = tetriminos->next;
+        a++;
+    }
+    return (start->begin);
+}

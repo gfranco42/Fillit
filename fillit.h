@@ -38,6 +38,11 @@ typedef struct	s_stock
 	s_stock		*next;
 }				t_stock;
 
+typedef struct  s_begin
+{
+    t_stock     *begin;
+}
+
 void			ft_error(int argc);
 
 #endif
