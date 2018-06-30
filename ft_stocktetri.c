@@ -6,7 +6,7 @@
 /*   By: gfranco <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/18 12:10:47 by gfranco           #+#    #+#             */
-/*   Updated: 2018/06/29 16:06:01 by gfranco          ###   ########.fr       */
+/*   Updated: 2018/06/30 11:42:28 by gfranco          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ t_stock     ft_stocktetri(char *file, int i)
 
 }
 
-t_stock		ft_init()
+t_stock		*ft_init(char *file, int i)
 {
     t_stock     *tetriminos;
     t_begin     *start;

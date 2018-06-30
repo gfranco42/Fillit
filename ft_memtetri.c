@@ -6,7 +6,7 @@
 /*   By: gfranco <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/18 12:10:05 by gfranco           #+#    #+#             */
-/*   Updated: 2018/06/29 14:54:39 by gfranco          ###   ########.fr       */
+/*   Updated: 2018/06/30 11:41:10 by gfranco          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,12 @@
  *
  * oui c'est moche mais bon, bref, passons.*/
 
-t_tetri		ft_memtetri(char *file, int i)
+t_tetri		*ft_memtetri(char *file, int i)
 {
 	t_tetri		*tetriminos;
 	int			count;
 
+	tetriminos = NULL;
 	count = 0;
 	while (file[i] != '#') //tu cherche le premier "bloc" d'un tetriminos
 		i++;
@@ -40,4 +41,5 @@ t_tetri		ft_memtetri(char *file, int i)
 		i++;
 	tetriminos->d.x = i % 5;
 	tetriminos->d.y = i / 5;
+	return (tetriminos);
 }
