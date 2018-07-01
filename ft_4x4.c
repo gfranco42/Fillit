@@ -6,7 +6,7 @@
 /*   By: gfranco <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/28 18:50:53 by gfranco           #+#    #+#             */
-/*   Updated: 2018/06/30 11:35:05 by gfranco          ###   ########.fr       */
+/*   Updated: 2018/07/01 16:28:59 by gfranco          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,25 +108,3 @@ int			ft_4x4(char *str)
 		return (0);
 	return (1);
 }
-/*
-int	main()
-{
-	char a[] = ".##.\n..##\n....\n....\n\n....\n....\n....\n....\n\n....\n....\n....\n....\n"; //correct form of 3 tetriminos
-	char b[] = "...#\n....\n....\n....\n\n....\n"; //correct form of tetriminos + incorrect form
-//	char c[] = "...#\n....\n....\n....\n"; //correct form of 1 tetriminos
-
-//	printf("Must be 3: %d\n", ft_count(a));
-//	printf("Must be 0: %d\n", ft_count(b));
-//	printf("***************\n");
-//	printf("A must be 3: %d\n", ft_count(a)); //displays 3 - correct
-//	printf("***************\n");
-//	printf("B must be 0: %d\n", ft_count(b));//displays 1 - incorrect
-//	printf("***************\n");
-//	printf("C must be 1: %d\n", ft_count(c));//displays 1 - correct
-	printf("***************\n");
-	printf("A Must be 0: %d\n", ft_v4x4(a)); //displays 0 - correct
-	printf("***************\n");
-	printf("B must be 1: %d\n", ft_v4x4(b)); //displays 0 - incorrect
-	printf("***************\n");
-	return (0);
-}*/
