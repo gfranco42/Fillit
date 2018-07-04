@@ -6,7 +6,7 @@
 /*   By: gfranco <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/18 12:00:06 by gfranco           #+#    #+#             */
-/*   Updated: 2018/06/30 12:09:39 by gfranco          ###   ########.fr       */
+/*   Updated: 2018/07/04 22:33:40 by cabdul-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,7 @@ typedef struct		s_begin
 }					t_begin;;
 
 int					ft_4x4(char *str);
+int					ft_check(char *str);
 void				ft_error(int argc);
 void				*ft_memalloc(size_t size);
 t_tetri				*ft_memtetri(char *file, int i);

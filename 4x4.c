@@ -6,7 +6,7 @@
 /*   By: gfranco <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/28 18:50:53 by gfranco           #+#    #+#             */
-/*   Updated: 2018/07/02 23:28:24 by cabdul-h         ###   ########.fr       */
+/*   Updated: 2018/07/04 23:44:08 by cabdul-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,14 @@ int		ft_1t(char *str, int c) //fn counts the no. of elements within the first te
 	return (res); //returns 20 if correct form in terms of qty given
 }
 
+int		ft_1(char *str, int c) //created new fn to confirm that there is just 1 tetris present
+{
+	if (ft_1t(str, c) == 20 && str[20] == '\0')
+		return (0); //confirms that there is just 1 tetris
+	else
+		return (1);
+}
+
 int			ft_count(char *str) //fn shows no. of tetris present in string
 {
 	int		c;
@@ -60,6 +68,11 @@ int			ft_count(char *str) //fn shows no. of tetris present in string
 
 	c = 0;
 	tnb = 0;
+	if (ft_1(str,c) == 0) //inclusion of new fn
+	{
+		tnb = 1;
+		return (tnb);
+	}
 	while (str[c] != '\0')
 	{
 		if (ft_1t(str, c) == 20)
@@ -73,7 +86,7 @@ int			ft_count(char *str) //fn shows no. of tetris present in string
 	return (tnb);
 }
 //this fn is not used in the main/makefile
-int			ft_count2(char *str) //fn shows the no. of tetriminos present
+/*int			ft_count2(char *str) //fn shows the no. of tetriminos present
 {
 	int		count;
 	int		add;
@@ -101,7 +114,7 @@ int			ft_count2(char *str) //fn shows the no. of tetriminos present
 	}
 	return (nb);
 }
-
+*/
 int			ft_v4x4(char *str)
 {
 	if (ft_newline(str) == 0 && ft_count(str) != 0) //could include if tetris == 1, then it's correct too
@@ -118,7 +131,8 @@ int	main()
 	char e[] = ".\n.\n.\n..\n"; //incorrect form of 1 tetriminos
 
 //	printf("Must be 3: %d\n", ft_count(a));
-//	printf("Must be 0: %d\n", ft_count(b));
+//	printf("Must be 0: %d\n", ft_count(
+//	b));
 //	printf("***************\n");
 //	printf("A must be 3: %d\n", ft_count(a)); //displays 3 - correct
 //	printf("***************\n");
@@ -142,6 +156,9 @@ int	main()
 	printf("C has: %d tetris\n", ft_count(c)); //displays 0 - incorrect **************** could change the ft_1t to show that this is 1 tetris
 	printf("E has: %d tetris\n", ft_count(e));
 	printf("***************\n");
-	printf("A has: %d \n", ft_count2(a)); //displays 3 - correct
+//	printf("A has: %d \n", ft_count2(a)); //displays 3 - correct
+	printf("***************\n");
+	printf("C is 1 tetris, 1 means false: %d \n", ft_1(c, d)); //displays 0 - incorrect **************** could change the ft_1t to show that this is 1 tetris
+	printf("***************\n");
 	return (0);
 }

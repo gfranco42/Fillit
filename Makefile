@@ -6,7 +6,7 @@
 #    By: gfranco <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/06/01 18:05:34 by gfranco           #+#    #+#              #
-#    Updated: 2018/07/01 18:56:08 by gfranco          ###   ########.fr        #
+#    Updated: 2018/07/04 22:32:36 by cabdul-h         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,6 +19,7 @@ CFLAGS = -Wall -Werror -Wextra
 
 SRC = ft_4x4.c                \
 	  ft_error.c              \
+	  ft_check.c              \
 	  ft_memalloc.c           \
 	  ft_memtetri.c           \
 	  ft_memset.c             \

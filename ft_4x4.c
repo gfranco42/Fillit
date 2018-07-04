@@ -6,7 +6,7 @@
 /*   By: gfranco <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/28 18:50:53 by gfranco           #+#    #+#             */
-/*   Updated: 2018/07/01 16:28:59 by gfranco          ###   ########.fr       */
+/*   Updated: 2018/07/04 23:43:32 by cabdul-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,6 @@ int			ft_newline(char *str) //fn shows whether there is a newline after every 5 
 	return (0);
 }
 
-/*Create function to return false if a tetriminos is flase even if the others
- * are correct.*/
-//create fn to verify that each tetriminos is of a correct form - perhaps look into the quantities file and integrate with the fn below.
 int		ft_1t(char *str, int c)
 {
 	int		res;
@@ -53,6 +50,14 @@ int		ft_1t(char *str, int c)
 	return (res);
 }
 
+int		ft_1(char *str, int c) //created new fn to show that there is just 1 tetris
+{
+	if (ft_1t(str, c) == 20 && str[20] == '\0')
+		return (0);
+	else
+		return (1);
+}
+
 int			ft_count(char *str)
 {
 	int		c;
@@ -60,6 +65,11 @@ int			ft_count(char *str)
 
 	c = 0;
 	tnb = 0;
+	if (ft_1(str, c) == 0) //inclusion of new ft_1 to show that there is just 1 tetris
+	{
+		tnb = 1;
+		return (tnb);
+	}
 	while (str[c] != '\0')
 	{
 		if (ft_1t(str, c) == 20)
@@ -72,7 +82,7 @@ int			ft_count(char *str)
 	}
 	return (tnb);
 }
-
+/* *************** fn below not used in makefile or main..... *******************
 int			ft_count2(char *str) //fn shows the no. of tetriminos present
 {
 	int		count;
@@ -101,7 +111,7 @@ int			ft_count2(char *str) //fn shows the no. of tetriminos present
 	}
 	return (nb);
 }
-
+*/
 int			ft_4x4(char *str)
 {
 	if (ft_newline(str) == 0 && ft_count(str) != 0)
