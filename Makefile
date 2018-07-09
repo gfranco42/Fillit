@@ -6,7 +6,7 @@
 #    By: gfranco <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/06/01 18:05:34 by gfranco           #+#    #+#              #
-#    Updated: 2018/07/09 17:24:59 by gfranco          ###   ########.fr        #
+#    Updated: 2018/07/09 18:14:45 by gfranco          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,8 +15,10 @@
 NAME = fillit
 
 CC = gcc
-CFLAGS = -Wall -Werror -Wextra
+CFLAGS = -Wall -Werror -Wextra -I$(INC_PATH)
 
+SRC_PATH = ./src/
+SRCS = $(addprefix $(SRC_PATH), $(SRC))
 SRC = ft_check.c              \
 	  ft_counttetri.c         \
 	  ft_error.c              \
@@ -37,14 +39,20 @@ SRC = ft_check.c              \
 #	  ft_stocktetri.c         \
 #	  ft_4x4.c                \
 
+OBJ_PATH = ./obj/
+OBJS = $(addprefix $(OBJ_PATH), $(OBJ))
 OBJ = $(SRC:.c=.o)
 
+INC_PATH = ./includes/
+INCS = $(addprefix $(INC_PATH), $(INC))
 INC = fillit.h
 
 all: $(NAME)
 
-$(NAME): $(OBJ)
-	@$(CC) $(CFLAGS) $(SRC) -o $(NAME)
+$(NAME): $(OBJ_PATH) $(OBJS)
+	@ar -rc $(NAME) $(OBJS)
+	@ranlib $(NAME)
+	@$(CC) $(CFLAGS) $(SRCS) -o $(NAME)
 	@clear
 	@echo "            \033[1;34m                boing         boing         boing"
 	@echo "             \033[1;32m e-e\033[1;31m           . - .         . - .         . - ."
@@ -55,8 +63,15 @@ $(NAME): $(OBJ)
 	@echo "                   \033[1;32m^'^'\033[1;31m"
 	@./fillit
 
+$(OBJ_PATH)%.o: $(SRC_PATH)%.c $(INCS)
+	$(CC) $(CFLAGS) -c $< -o $@
+
+$(OBJ_PATH):
+	@mkdir -p $(OBJ_PATH)
+
 clean:
-	@rm -f $(OBJ)
+	@rm -f $(OBJS)
+	@rm -rf $(OBJ_PATH)
 
 fclean: clean
 	@rm -f $(NAME)
