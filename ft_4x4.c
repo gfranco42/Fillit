@@ -6,7 +6,7 @@
 /*   By: gfranco <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/28 18:50:53 by gfranco           #+#    #+#             */
-/*   Updated: 2018/07/01 16:28:59 by gfranco          ###   ########.fr       */
+/*   Updated: 2018/07/04 13:06:36 by gfranco          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,9 @@ int			ft_newline(char *str) //fn shows whether there is a newline after every 5 
 	{
 		if (str[j] == '\n')
 		{
-		   j = j + 5;
-		   if (str[j + 1] == '\n')
-			   j++;
+			j = j + 5;
+			if (str[j + 1] == '\n')
+				j++;
 		}
 		else
 			return (1);
@@ -40,16 +40,20 @@ int		ft_1t(char *str, int c)
 {
 	int		res;
 
-	res = 1;
-	while (str[c++] != '\n')
+	res = 0;
+	while (str[c] != '\n')
 	{
+		printf("A");
 		res++;
 		if (str[c + 1] != '\n' && str[c + 1] != '\0')
 		{
+			printf("B");
 			c++;
 			res++;
 		}
+		c++;
 	}
+	printf("%d\n", res);
 	return (res);
 }
 
@@ -62,18 +66,21 @@ int			ft_count(char *str)
 	tnb = 0;
 	while (str[c] != '\0')
 	{
-		if (ft_1t(str, c) == 20)
+		printf("I");
+		if (ft_1t(str, c) == 4)
 		{
+			printf("J");
 			c += 21;
 			tnb++;
 		}
 		else
 			return (0);
 	}
+	printf("\033[1;35m%d\033[0m\n", tnb);
 	return (tnb);
 }
 
-int			ft_count2(char *str) //fn shows the no. of tetriminos present
+/*int			ft_count2(char *str) //fn shows the no. of tetriminos present
 {
 	int		count;
 	int		add;
@@ -101,7 +108,7 @@ int			ft_count2(char *str) //fn shows the no. of tetriminos present
 	}
 	return (nb);
 }
-
+*/
 int			ft_4x4(char *str)
 {
 	if (ft_newline(str) == 0 && ft_count(str) != 0)

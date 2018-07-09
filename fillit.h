@@ -6,7 +6,7 @@
 /*   By: gfranco <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/18 12:00:06 by gfranco           #+#    #+#             */
-/*   Updated: 2018/06/30 12:09:39 by gfranco          ###   ########.fr       */
+/*   Updated: 2018/07/09 15:43:44 by gfranco          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ typedef struct		s_tetri// structure qui regroupe les 4 bloc d'un tetriminos
 
 typedef struct		s_stock
 {
-	t_tetri			tetri;
+	t_tetri			*tetri;
 	struct s_stock	*next;
 }					t_stock;
 
@@ -57,5 +57,12 @@ char				*ft_strjoin(char const *s1, char const *s2);
 size_t				ft_strlen(const char *s);
 char				**ft_strsplit(char const *s, char c);
 char				*ft_strsub(char const *s, unsigned int start, size_t len);
+int					ft_check(char *str);
+
+int					ft_is_near(char *str);
+int					ft_count_hash(char *str);
+int					ft_count_bn(char *str);
+int					ft_count_dot(char *str);
+int					ft_bad_char(char *str);
 
 #endif

@@ -6,7 +6,7 @@
 #    By: gfranco <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/06/01 18:05:34 by gfranco           #+#    #+#              #
-#    Updated: 2018/07/01 18:56:08 by gfranco          ###   ########.fr        #
+#    Updated: 2018/07/09 15:44:53 by gfranco          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,6 +18,7 @@ CC = gcc
 CFLAGS = -Wall -Werror -Wextra
 
 SRC = ft_4x4.c                \
+	  ft_check.c              \
 	  ft_error.c              \
 	  ft_memalloc.c           \
 	  ft_memtetri.c           \
@@ -31,6 +32,7 @@ SRC = ft_4x4.c                \
 	  ft_strsplit.c           \
 	  ft_strsub.c             \
 	  main.c                  \
+	  ft_is_near.c            \
 
 #COMMENTS :
 #	  ft_stocktetri.c         \

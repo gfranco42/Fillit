@@ -6,7 +6,7 @@
 /*   By: gfranco <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/18 12:09:01 by gfranco           #+#    #+#             */
-/*   Updated: 2018/07/04 16:22:14 by gfranco          ###   ########.fr       */
+/*   Updated: 2018/07/09 15:58:26 by gfranco          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,9 @@
  -> there are 12 '.' per tetri
  -> there are 4 '\n' per tetri
  -> there are no other character than '.' , '#' , '\n'
+ -> each '#' is next to another one
 
- Function "ft_check" returns (0) if the 4 others function's check is good
+ Function "ft_check" returns (0) if the 5 others function's check is good
  * */
 
 int		ft_count_hash(char *str)
@@ -106,10 +107,30 @@ int		ft_bad_char(char *str)
 	return (0);
 }
 
+int		ft_is_near(char *str)
+{
+	int		i;
+	int		count;
+
+	i = 0;
+	count = 0;
+	while (str[i] != '\0')
+	{
+		if (str[i] == '#' && (str[i - 1] == '#' || str[i + 1] == '#'
+			|| str[i + 5] == '#' || str[i - 5] == '#'))
+			count++;
+		i++;;
+	}
+	if (count == 0)
+		return (1);
+	return (count % 4);
+}
+
 int		ft_check(char *str)
 {
 	if (ft_count_hash(str) == 0 && ft_count_bn(str) == 0
-		&& ft_count_dot(str) == 0 && ft_bad_char(str) == 0)
+		&& ft_count_dot(str) == 0 && ft_bad_char(str) == 0 
+		&& ft_is_near(str) == 0)
 		return (0);
 	return (1);
 }
