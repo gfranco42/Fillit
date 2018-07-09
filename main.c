@@ -6,11 +6,7 @@
 /*   By: gfranco <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/18 11:36:58 by gfranco           #+#    #+#             */
-<<<<<<< HEAD
-/*   Updated: 2018/07/09 17:02:41 by gfranco          ###   ########.fr       */
-=======
-/*   Updated: 2018/07/04 23:39:13 by cabdul-h         ###   ########.fr       */
->>>>>>> 72e3a03d2a0d75f11f1447a3b2d8e3deb34e173d
+/*   Updated: 2018/07/09 17:29:01 by gfranco          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +23,6 @@
 
 int		main(/*int argc, char **argv*/)
 {
-<<<<<<< HEAD
 //	char	sA[] = "....\n....\n....\n....\n\n....\n....\n....\n....\n";//		---> test with ft_4x4.c
 //	char	sB[] = "....\n....\n....\n....\n\n....\n";//						---> test with ft_4x4.c
 //	char	sC[] = "....\n....\n....\n....\n";//								---> test with ft_4x4.c
@@ -55,6 +50,10 @@ int		main(/*int argc, char **argv*/)
 //	char	sS[] = "...#\n..#.\n.#..\n#...\n";//								---> test with ft_is_near.c ==> FALSE
 //	char	sT[] = "...#\n...#\n...#\n..#.\n";//								---> test with ft_is_near.c ==> FALSE
 //
+	char	sU[] = "...#\n...#\n...#\n..#.\n\n...#\n..##\n..#.\n....\n\n####\n....\n....\n....\n";//	---> test with ft_counttetri.c ==> TRUE
+	char	sV[] = "...#\n...#\n...#\n..#.\n\n....\n....\n....\n1234\n";//								---> test with ft_counttetri.c ==> TRUE
+	char	sW[] = "...#\n...#\n...#\n..#.\n....\n";//													---> test with ft_counttetri.c ==> FALSE
+//
 //	printf("\033[1;31m*** TEST 'sA' ***\033[1;37m\nIf Correct -> \033[0;32m0\033[1;37m\nIf Error   -> \033[0;31m1\033[1;37m\nResult     -> \033[1;34m%d\n\n", ft_4x4(sA));
 //	printf("\033[1;31m*** TEST 'sB' ***\033[1;37m\nIf Correct -> \033[0;32m1\033[1;37m\nIf Error   -> \033[0;31m0\033[1;37m\nResult     -> \033[1;34m%d\n\n", ft_4x4(sB));
 //	printf("\033[1;31m*** TEST 'sC' ***\033[1;37m\nIf Correct -> \033[0;32m0\033[1;37m\nIf Error   -> \033[0;31m1\033[1;37m\nResult     -> \033[1;34m%d\n\n", ft_4x4(sC));
@@ -81,20 +80,9 @@ int		main(/*int argc, char **argv*/)
 //	printf("\033[1;31m*** TEST 'sR' ***\033[1;37m\nIf Correct -> \033[0;32m0\033[1;37m\nIf Error   -> \033[0;31m!=0\033[1;37m\nResult     -> \033[1;34m%d\n\n", ft_is_near(sR));
 //	printf("\033[1;31m*** TEST 'sS' ***\033[1;37m\nIf Correct -> \033[0;32m!=0\033[1;37m\nIf Error   -> \033[0;31m0\033[1;37m\nResult     -> \033[1;34m%d\n\n", ft_is_near(sS));
 //	printf("\033[1;31m*** TEST 'sT' ***\033[1;37m\nIf Correct -> \033[0;32m!=0\033[1;37m\nIf Error   -> \033[0;31m0\033[1;37m\nResult     -> \033[1;34m%d\n\n", ft_is_near(sT));
-=======
-	char	sA[] = "...#\n...#\n...#\n...#\n\n.#..\n.#..\n.#..\n.#..\n";//		---> Valid tetriminos's size (2 blocs).
-	char	sB[] = "...#\n...#\n...#\n...#\n\n.#..\n";//						---> 1 valid bloc but the second one is false.
-//	char	sC[] = "ABCDEFGHIJKLMNOP";//										---> it's not a tetriminos.
-	char	sD[] = "...#\n...#\n...#\n...#\n";//						        ---> 1 valid tetris
-	char	sE[] = "";							//						        ---> blank string
 
-	printf("\033[1;31m*** TEST 'sA' ***\033[1;37m\nIf Correct -> 0\nIf Error   -> 1\nResult     -> %d\n", ft_4x4(sA)); //shows 0 - correct
-	printf("\033[1;31m*** TEST 'sB' ***\033[1;37m\nIf Correct -> 1\nIf Error   -> 0\nResult     -> %d\n", ft_4x4(sB)); //shows 1 - correct
-	printf("\033[1;31m*** TEST 'sD' ***\033[1;37m\nIf Correct -> 0\nIf Error   -> 0\nResult     -> %d\n", ft_4x4(sD)); //shows 0 - correct
-	printf("\033[1;31m*** TEST 'sA' ***\033[1;37m\nIf Correct -> 0\nIf Error   -> 0\nResult     -> %d\n", ft_check(sA)); //shows 0 - correct
-	printf("\033[1;31m*** TEST 'sB' ***\033[1;37m\nIf Correct -> 1\nIf Error   -> 0\nResult     -> %d\n", ft_check(sB)); //shows 1 - correct
-	printf("\033[1;31m*** TEST 'sD' ***\033[1;37m\nIf Correct -> 0\nIf Error   -> 0\nResult     -> %d\n", ft_check(sD)); //shows 0 - correct
-	printf("\033[1;31m*** TEST 'sE' ***\033[1;37m\nIf Correct -> 1\nIf Error   -> 0\nResult     -> %d\n", ft_check(sE)); //shows 1 - correct
->>>>>>> 72e3a03d2a0d75f11f1447a3b2d8e3deb34e173d
+	printf("\033[1;31m*** TEST 'sU' ***\033[1;37m\nIf Correct -> \033[0;32m!=0\033[1;37m\nIf Error   -> \033[0;31m0\033[1;37m\nResult     -> \033[1;34m%zu\n\n", ft_counttetri(sU));
+	printf("\033[1;31m*** TEST 'sV' ***\033[1;37m\nIf Correct -> \033[0;32m!=0\033[1;37m\nIf Error   -> \033[0;31m0\033[1;37m\nResult     -> \033[1;34m%zu\n\n", ft_counttetri(sV));
+	printf("\033[1;31m*** TEST 'sW' ***\033[1;37m\nIf Correct -> \033[0;32m0\033[1;37m\nIf Error   -> \033[0;31m!=0\033[1;37m\nResult     -> \033[1;34m%zu\n\n", ft_counttetri(sW));
 	return (0);
 }

@@ -6,11 +6,7 @@
 /*   By: gfranco <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/28 18:50:53 by gfranco           #+#    #+#             */
-<<<<<<< HEAD
-/*   Updated: 2018/07/04 13:06:36 by gfranco          ###   ########.fr       */
-=======
-/*   Updated: 2018/07/04 23:43:32 by cabdul-h         ###   ########.fr       */
->>>>>>> 72e3a03d2a0d75f11f1447a3b2d8e3deb34e173d
+/*   Updated: 2018/07/09 17:24:10 by gfranco          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,11 +89,10 @@ int			ft_count(char *str)
 	printf("\033[1;35m%d\033[0m\n", tnb);
 	return (tnb);
 }
-<<<<<<< HEAD
 
 /*int			ft_count2(char *str) //fn shows the no. of tetriminos present
 =======
-/* *************** fn below not used in makefile or main..... *******************
+* *************** fn below not used in makefile or main..... *******************
 int			ft_count2(char *str) //fn shows the no. of tetriminos present
 >>>>>>> 72e3a03d2a0d75f11f1447a3b2d8e3deb34e173d
 {

@@ -6,11 +6,7 @@
 #    By: gfranco <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/06/01 18:05:34 by gfranco           #+#    #+#              #
-<<<<<<< HEAD
-#    Updated: 2018/07/09 15:44:53 by gfranco          ###   ########.fr        #
-=======
-#    Updated: 2018/07/04 22:32:36 by cabdul-h         ###   ########.fr        #
->>>>>>> 72e3a03d2a0d75f11f1447a3b2d8e3deb34e173d
+#    Updated: 2018/07/09 17:24:59 by gfranco          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,10 +17,9 @@ NAME = fillit
 CC = gcc
 CFLAGS = -Wall -Werror -Wextra
 
-SRC = ft_4x4.c                \
-	  ft_check.c              \
+SRC = ft_check.c              \
+	  ft_counttetri.c         \
 	  ft_error.c              \
-	  ft_check.c              \
 	  ft_memalloc.c           \
 	  ft_memtetri.c           \
 	  ft_memset.c             \
@@ -37,11 +32,10 @@ SRC = ft_4x4.c                \
 	  ft_strsplit.c           \
 	  ft_strsub.c             \
 	  main.c                  \
-	  ft_is_near.c            \
 
 #COMMENTS :
 #	  ft_stocktetri.c         \
-#
+#	  ft_4x4.c                \
 
 OBJ = $(SRC:.c=.o)
 

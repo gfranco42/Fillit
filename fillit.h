@@ -6,11 +6,7 @@
 /*   By: gfranco <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/18 12:00:06 by gfranco           #+#    #+#             */
-<<<<<<< HEAD
-/*   Updated: 2018/07/09 15:43:44 by gfranco          ###   ########.fr       */
-=======
-/*   Updated: 2018/07/04 22:33:40 by cabdul-h         ###   ########.fr       */
->>>>>>> 72e3a03d2a0d75f11f1447a3b2d8e3deb34e173d
+/*   Updated: 2018/07/09 17:21:45 by gfranco          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +46,7 @@ typedef struct		s_begin
 
 int					ft_4x4(char *str);
 int					ft_check(char *str);
+size_t				ft_counttetri(char *str);
 void				ft_error(int argc);
 void				*ft_memalloc(size_t size);
 t_tetri				*ft_memtetri(char *file, int i);
@@ -62,8 +59,7 @@ char				*ft_strjoin(char const *s1, char const *s2);
 size_t				ft_strlen(const char *s);
 char				**ft_strsplit(char const *s, char c);
 char				*ft_strsub(char const *s, unsigned int start, size_t len);
-int					ft_check(char *str);
-
+// FUNCTIONS BELOW ARE HERE ONLY FOR TEST IN MAIN.C
 int					ft_is_near(char *str);
 int					ft_count_hash(char *str);
 int					ft_count_bn(char *str);
