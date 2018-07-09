@@ -6,7 +6,11 @@
 /*   By: gfranco <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/28 18:50:53 by gfranco           #+#    #+#             */
+<<<<<<< HEAD
 /*   Updated: 2018/07/04 13:06:36 by gfranco          ###   ########.fr       */
+=======
+/*   Updated: 2018/07/04 23:43:32 by cabdul-h         ###   ########.fr       */
+>>>>>>> 72e3a03d2a0d75f11f1447a3b2d8e3deb34e173d
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +37,6 @@ int			ft_newline(char *str) //fn shows whether there is a newline after every 5 
 	return (0);
 }
 
-/*Create function to return false if a tetriminos is flase even if the others
- * are correct.*/
-//create fn to verify that each tetriminos is of a correct form - perhaps look into the quantities file and integrate with the fn below.
 int		ft_1t(char *str, int c)
 {
 	int		res;
@@ -57,6 +58,14 @@ int		ft_1t(char *str, int c)
 	return (res);
 }
 
+int		ft_1(char *str, int c) //created new fn to show that there is just 1 tetris
+{
+	if (ft_1t(str, c) == 20 && str[20] == '\0')
+		return (0);
+	else
+		return (1);
+}
+
 int			ft_count(char *str)
 {
 	int		c;
@@ -64,6 +73,11 @@ int			ft_count(char *str)
 
 	c = 0;
 	tnb = 0;
+	if (ft_1(str, c) == 0) //inclusion of new ft_1 to show that there is just 1 tetris
+	{
+		tnb = 1;
+		return (tnb);
+	}
 	while (str[c] != '\0')
 	{
 		printf("I");
@@ -79,8 +93,13 @@ int			ft_count(char *str)
 	printf("\033[1;35m%d\033[0m\n", tnb);
 	return (tnb);
 }
+<<<<<<< HEAD
 
 /*int			ft_count2(char *str) //fn shows the no. of tetriminos present
+=======
+/* *************** fn below not used in makefile or main..... *******************
+int			ft_count2(char *str) //fn shows the no. of tetriminos present
+>>>>>>> 72e3a03d2a0d75f11f1447a3b2d8e3deb34e173d
 {
 	int		count;
 	int		add;
