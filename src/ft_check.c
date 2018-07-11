@@ -6,12 +6,11 @@
 /*   By: gfranco <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/18 12:09:01 by gfranco           #+#    #+#             */
-/*   Updated: 2018/07/09 18:17:59 by gfranco          ###   ########.fr       */
+/*   Updated: 2018/07/10 15:03:32 by gfranco          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
-#include <stdio.h>
 
 /*
  This function checks if:
@@ -114,16 +113,17 @@ int		ft_is_near(char *str)
 
 	i = 0;
 	count = 0;
-	while (str[i] != '\0')
+	while (str[i])
 	{
-		if (str[i] == '#' && (str[i - 1] == '#' || str[i + 1] == '#'
-			|| str[i + 5] == '#' || str[i - 5] == '#'))
+		if (str[i] == '#' && (str[i + 1] == '#'))
 			count++;
-		i++;;
+		else if (str[i] == '#' && (str[i + 5] == '#'))
+			count++;
+		i++;
 	}
 	if (count == 0)
 		return (1);
-	return (count % 4);
+	return (count % 3);
 }
 
 int		ft_check(char *str)

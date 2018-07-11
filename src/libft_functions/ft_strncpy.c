@@ -1,37 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_open_file.c                                     :+:      :+:    :+:   */
+/*   ft_strncpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gfranco <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/07/10 15:48:25 by gfranco           #+#    #+#             */
-/*   Updated: 2018/07/11 14:51:25 by gfranco          ###   ########.fr       */
+/*   Created: 2018/04/17 11:52:57 by gfranco           #+#    #+#             */
+/*   Updated: 2018/06/02 07:59:53 by gfranco          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/fillit.h"
+#include "libft.h"
 
-void	ft_error(int ac, char **av, int fd)
+char	*ft_strncpy(char *dst, const char *src, size_t n)
 {
-	if (av == NULL)
+	size_t	a;
+
+	a = 0;
+	while (a < n && src[a] != '\0')
 	{
-		write(2, "error \033[0;31mNULL\033[0mtarget_file\n", 29);
-		exit(EXIT_FAILURE);
+		dst[a] = src[a];
+		a++;
 	}
-	if (ac != 2)
+	while (a < n)
 	{
-		write(2, "usage: ./fillit target_file\n", 29);
-		exit(EXIT_FAILURE);
+		dst[a] = '\0';
+		a++;
 	}
-	if (fd == -1)
-	{
-		write (2, "error open()\n", 14);
-		exit(EXIT_FAILURE);
-	}
-	if (fd == -2)
-	{
-		write (2, "error malloc()\n", 16);
-		exit(EXIT_FAILURE);
-	}
+	return (dst);
 }

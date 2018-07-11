@@ -1,37 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_open_file.c                                     :+:      :+:    :+:   */
+/*   ft_stocktetri.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gfranco <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/07/10 15:48:25 by gfranco           #+#    #+#             */
-/*   Updated: 2018/07/11 14:51:25 by gfranco          ###   ########.fr       */
+/*   Created: 2018/06/18 12:10:47 by gfranco           #+#    #+#             */
+/*   Updated: 2018/07/09 12:47:05 by gfranco          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/fillit.h"
+#include "fillit.h"
 
-void	ft_error(int ac, char **av, int fd)
+t_stock     ft_stocktetri(char *file, int i)
 {
-	if (av == NULL)
-	{
-		write(2, "error \033[0;31mNULL\033[0mtarget_file\n", 29);
+
+}
+
+t_stock		*ft_init(char *file, int i)
+{
+    t_stock     *tetriminos;
+    t_begin     *start;
+
+	if (!(tetriminos = (t_stock*)malloc(sizeof(t_stock*))))
 		exit(EXIT_FAILURE);
-	}
-	if (ac != 2)
-	{
-		write(2, "usage: ./fillit target_file\n", 29);
+	if (!(start = (t_begin*)malloc(sizeof(t_begin*))))
 		exit(EXIT_FAILURE);
-	}
-	if (fd == -1)
-	{
-		write (2, "error open()\n", 14);
-		exit(EXIT_FAILURE);
-	}
-	if (fd == -2)
-	{
-		write (2, "error malloc()\n", 16);
-		exit(EXIT_FAILURE);
-	}
+	tetriminos->tetri = ft_memtetri(file, i);
+	tetriminos->next = NULL;
+	start->begin = tetriminos;
+
+	return (start->begin);
 }

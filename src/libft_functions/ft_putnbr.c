@@ -1,37 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_open_file.c                                     :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gfranco <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/07/10 15:48:25 by gfranco           #+#    #+#             */
-/*   Updated: 2018/07/11 14:51:25 by gfranco          ###   ########.fr       */
+/*   Created: 2018/04/16 14:05:26 by gfranco           #+#    #+#             */
+/*   Updated: 2018/05/17 11:26:29 by gfranco          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/fillit.h"
+#include "libft.h"
 
-void	ft_error(int ac, char **av, int fd)
+void	ft_putnbr(int n)
 {
-	if (av == NULL)
+	if (n == -2147483648)
+		ft_putstr("-2147483648");
+	if (n >= -2147483647 && n < 0)
 	{
-		write(2, "error \033[0;31mNULL\033[0mtarget_file\n", 29);
-		exit(EXIT_FAILURE);
+		ft_putchar('-');
+		ft_putnbr(-n);
 	}
-	if (ac != 2)
+	else if (n <= 2147483647 && n > 9)
 	{
-		write(2, "usage: ./fillit target_file\n", 29);
-		exit(EXIT_FAILURE);
+		ft_putnbr(n / 10);
+		ft_putnbr(n % 10);
 	}
-	if (fd == -1)
+	else if (n <= 9)
 	{
-		write (2, "error open()\n", 14);
-		exit(EXIT_FAILURE);
-	}
-	if (fd == -2)
-	{
-		write (2, "error malloc()\n", 16);
-		exit(EXIT_FAILURE);
+		if (n >= 0)
+			ft_putchar(n + '0');
 	}
 }
