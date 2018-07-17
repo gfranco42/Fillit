@@ -1,32 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strmap.c                                        :+:      :+:    :+:   */
+/*   recursive.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gfranco <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/04/18 15:25:18 by gfranco           #+#    #+#             */
-/*   Updated: 2018/05/17 11:25:25 by gfranco          ###   ########.fr       */
+/*   Created: 2018/07/12 10:53:44 by gfranco           #+#    #+#             */
+/*   Updated: 2018/07/13 13:12:31 by gfranco          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "./includes/fillit.h"
+#include <stdio.h>
 
-#include "libft.h"
-
-char		*ft_strmap(char const *s, char (*f)(char))
+void	recursive(int a, int b)
 {
-	char	*tab;
-	size_t	a;
-
-	a = 0;
-	if (!s)
-		return (NULL);
-	if (!(tab = (char *)ft_memalloc(sizeof(char) * (ft_strlen(s) + 1))))
-		return (NULL);
-	while (a < ft_strlen(s))
-	{
-		tab[a] = f(s[a]);
-		a++;
-	}
-	tab[a] = '\0';
-	return (tab);
+	if (recursive(a+1, 1) == true)
+		return (true);
+		
+	return (res);
 }
+
+int		main()
+{
+	recursive(1, 15);
+	return (0);
+}
+
+

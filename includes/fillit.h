@@ -6,7 +6,7 @@
 /*   By: gfranco <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/18 12:00:06 by gfranco           #+#    #+#             */
-/*   Updated: 2018/07/09 18:19:47 by gfranco          ###   ########.fr       */
+/*   Updated: 2018/07/17 14:58:31 by gfranco          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,26 +44,29 @@ typedef struct		s_begin
     t_stock			*begin;
 }					t_begin;;
 
-int					ft_4x4(char *str);
+//int					ft_4x4(char *str);
 int					ft_check(char *str);
+int					ft_check2(char *str);
+void				ft_error(int ac, char **av, int fd);
 size_t				ft_counttetri(char *str);
-void				ft_error(int argc);
+char				*ft_file_cpy(int ac, char **av);
 //void				*ft_memalloc(size_t size);
-t_tetri				*ft_memtetri(char *file, int i);
+//t_tetri				*ft_memtetri(char *file, int i);
 //void				*ft_memset(void *b, int c, size_t n);
 //void				ft_putchar(char c);
 //void				ft_putstr(char const *s);
 //char				*ft_strcat(char *s1, const char *s2);
 //char				*ft_strcpy(char *dst, const char *src);
 //char				*ft_strjoin(char const *s1, char const *s2);
-//size_t				ft_strlen(const char *s);
+size_t				ft_strlen(const char *s);
 //char				**ft_strsplit(char const *s, char c);
 //char				*ft_strsub(char const *s, unsigned int start, size_t len);
 // FUNCTIONS BELOW ARE HERE ONLY FOR TEST IN MAIN.C
-int					ft_is_near(char *str);
-int					ft_count_hash(char *str);
-int					ft_count_bn(char *str);
-int					ft_count_dot(char *str);
-int					ft_bad_char(char *str);
-
+//int					ft_is_near(char *str);
+//int					ft_count_hash(char *str);
+//int					ft_count_bn(char *str);
+//int					ft_count_dot(char *str);
+//int					ft_bad_char(char *str);
+size_t					test(int ac, char **av);
+//
 #endif
