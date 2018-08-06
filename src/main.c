@@ -6,7 +6,7 @@
 /*   By: gfranco <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/18 11:36:58 by gfranco           #+#    #+#             */
-/*   Updated: 2018/07/17 16:16:31 by gfranco          ###   ########.fr       */
+/*   Updated: 2018/08/06 17:21:47 by gfranco          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,25 @@
  * Thank you girls!
 */
 
-int		main(/*int ac, char **av*/)
+int		main(int ac, char **av)
 {
+	char	*str;
+	char	**array;
+	int		i;
+
+	i = 0;
+	str = ft_file_cpy(ac, av);//		CHANGER FONCTION CHECK2 !!!!
+	array = ft_file_split(str);
+//	i = ft_check(str);//				TAPER MAKE RE POUR VOIR
+//	printf("Must display 0...\nresult : %d\n", i);
+//	printf("\033[0;32mft_is_near : %d\n", ft_is_near(str));
+//
+//	while (i < 5)
+//	{
+	printf("result : %d\n", ft_is_near(array));
+//		i++;
+//	}
+//
 //	printf("%s\n", ft_file_cpy(ac, av));//				--->TEST OPENING FILE
 //	char	sA[] = "....\n....\n....\n....\n\n....\n....\n....\n....\n";//		---> test with ft_4x4.c
 //	char	sB[] = "....\n....\n....\n....\n\n....\n";//						---> test with ft_4x4.c
@@ -58,9 +75,9 @@ int		main(/*int ac, char **av*/)
 //	char	sL17[] = "#...\n##..\n#...\n....\n";//								---> test with ft_check.c TRUE
 //	char	sL18[] = "###.\n.#..\n....\n....\n";//								---> test with ft_check.c TRUE
 //	char	sL19[] = ".#..\n##..\n.#..\n....\n";//								---> test with ft_check.c TRUE
-	char	sM[] = "...#\n...#\n...#\n...#\n\n####\n....\n....\n....\n";//		---> test with ft_check.c TRUE
-	char	sM2[] = "....\n....\n....\n####\n\n####\n....\n....\n....\n";//		---> test with ft_check.c TRUE
-	char	sM3[] = "....\n....\n....\n####\n\n####\n....\n....\n....\n\n####\n....\n....\n....\n\n####\n....\n....\n....\n";//		---> test with ft_check.c TRUE
+//	char	sM[] = "...#\n...#\n...#\n...#\n\n####\n....\n....\n....\n";//		---> test with ft_check.c TRUE
+//	char	sM2[] = "....\n....\n....\n####\n\n####\n....\n....\n....\n";//		---> test with ft_check.c TRUE
+//	char	sM3[] = "....\n....\n....\n####\n\n####\n....\n....\n....\n\n####\n....\n....\n....\n\n####\n....\n....\n....\n";//		---> test with ft_check.c TRUE
 //	char	sN1[] = "##..\n..##\n##..\n....\n";//								---> test with ft_check.c FALSE
 //	char	sN2[] = "##.#\n...#\n....\n....\n\n##..\n....\n....\n....\n";//		---> test with ft_check.c FALSE
 //	char	sN3[] = "##..\n....\n....\n..##\n";//								---> test with ft_check.c FALSE
@@ -115,9 +132,9 @@ int		main(/*int ac, char **av*/)
 //	printf("\033[1;31m*** TEST 'sL17' ***\033[1;37m\nIf Correct -> \033[0;32m0\033[1;37m\nIf Error   -> \033[0;31m1\033[1;37m\nResult     -> \033[1;34m%d\n\n", ft_check(sL17));
 //	printf("\033[1;31m*** TEST 'sL18' ***\033[1;37m\nIf Correct -> \033[0;32m0\033[1;37m\nIf Error   -> \033[0;31m1\033[1;37m\nResult     -> \033[1;34m%d\n\n", ft_check(sL18));
 //	printf("\033[1;31m*** TEST 'sL19' ***\033[1;37m\nIf Correct -> \033[0;32m0\033[1;37m\nIf Error   -> \033[0;31m1\033[1;37m\nResult     -> \033[1;34m%d\n\n", ft_check(sL19));
-	printf("\033[1;31m*** TEST 'sM' ***\033[1;37m\nIf Correct -> \033[0;32m0\033[1;37m\nIf Error   -> \033[0;31m1\033[1;37m\nResult     -> \033[1;34m%d\n\n", ft_check(sM));
-	printf("\033[1;31m*** TEST 'sM2' ***\033[1;37m\nIf Correct -> \033[0;32m0\033[1;37m\nIf Error   -> \033[0;31m1\033[1;37m\nResult     -> \033[1;34m%d\n\n", ft_check(sM2));
-	printf("\033[1;31m*** TEST 'sM3' ***\033[1;37m\nIf Correct -> \033[0;32m0\033[1;37m\nIf Error   -> \033[0;31m1\033[1;37m\nResult     -> \033[1;34m%d\n\n", ft_check(sM3));
+//	printf("\033[1;31m*** TEST 'sM' ***\033[1;37m\nIf Correct -> \033[0;32m0\033[1;37m\nIf Error   -> \033[0;31m1\033[1;37m\nResult     -> \033[1;34m%d\n\n", ft_check(sM));
+//	printf("\033[1;31m*** TEST 'sM2' ***\033[1;37m\nIf Correct -> \033[0;32m0\033[1;37m\nIf Error   -> \033[0;31m1\033[1;37m\nResult     -> \033[1;34m%d\n\n", ft_check(sM2));
+//	printf("\033[1;31m*** TEST 'sM3' ***\033[1;37m\nIf Correct -> \033[0;32m0\033[1;37m\nIf Error   -> \033[0;31m1\033[1;37m\nResult     -> \033[1;34m%d\n\n", ft_check(sM3));
 //	printf("\033[1;31m*** TEST 'sN1' ***\033[1;37m\nIf Correct -> \033[0;32m!=0\033[1;37m\nIf Error   -> \033[0;31m0\033[1;37m\nResult     -> \033[1;34m%d\n\n", ft_check(sN1));
 //	printf("\033[1;31m*** TEST 'sN2' ***\033[1;37m\nIf Correct -> \033[0;32m!=0\033[1;37m\nIf Error   -> \033[0;31m0\033[1;37m\nResult     -> \033[1;34m%d\n\n", ft_check(sN2));
 //	printf("\033[1;31m*** TEST 'sN3' ***\033[1;37m\nIf Correct -> \033[0;32m!=0\033[1;37m\nIf Error   -> \033[0;31m0\033[1;37m\nResult     -> \033[1;34m%d\n\n", ft_check(sN3));

@@ -6,7 +6,7 @@
 #    By: gfranco <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/06/01 18:05:34 by gfranco           #+#    #+#              #
-#    Updated: 2018/07/17 14:59:23 by gfranco          ###   ########.fr        #
+#    Updated: 2018/08/06 16:06:06 by gfranco          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,8 +24,10 @@ SRC = ft_check.c              \
 	  ft_error.c              \
 	  ft_counttetri.c         \
 	  ft_file_cpy.c           \
+	  ft_file_split.c         \
 	  ft_memalloc.c           \
 	  ft_memset.c             \
+	  ft_prtcpy.c             \
 	  ft_strlen.c             \
 	  ft_strncpy.c            \
 	  main.c                  \
@@ -65,7 +67,7 @@ $(NAME): $(OBJ_PATH) $(OBJS)
 	@echo "               \033[1;32m'\( ,_.-'\033[1;31m             v             v            ."
 	@echo "                   \033[1;32m\ \ \033[1;31m              .             .            . "
 	@echo "                   \033[1;32m^'^'\033[1;31m"
-	@./fillit
+	@./fillit text
 
 $(OBJ_PATH)%.o: $(SRC_PATH)%.c $(INCS)
 	$(CC) $(CFLAGS) -c $< -o $@

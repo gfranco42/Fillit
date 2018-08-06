@@ -1,21 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_strncpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gfranco <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/04/27 14:45:45 by gfranco           #+#    #+#             */
-/*   Updated: 2018/07/17 18:16:56 by gfranco          ###   ########.fr       */
+/*   Created: 2018/04/17 11:52:57 by gfranco           #+#    #+#             */
+/*   Updated: 2018/08/06 15:44:16 by gfranco          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/libft.h"
+#include "libft.h"
 
-int		ft_isalpha(int c)
+char			*ft_prtcpy(char *dst, const char *src, size_t n, size_t save)
 {
-	if ((c > 64 && c < 91) || (c > 96 && c < 123))
-		return (1);
-	else
-		return (0);
+	size_t		a;
+
+	a = 0;
+	while (a < n && src[save] != '\0')
+	{
+		dst[a] = src[save];
+		a++;
+		save++;
+	}
+	while (a < n)
+	{
+		dst[a] = '\0';
+		a++;
+	}
+	return (dst);
 }

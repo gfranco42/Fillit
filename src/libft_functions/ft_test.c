@@ -1,21 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_test.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gfranco <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/04/27 14:45:45 by gfranco           #+#    #+#             */
-/*   Updated: 2018/07/17 18:16:56 by gfranco          ###   ########.fr       */
+/*   Created: 2018/07/17 18:08:34 by gfranco           #+#    #+#             */
+/*   Updated: 2018/07/17 18:17:15 by gfranco          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/libft.h"
+#include "../../includes/fillit.h"
+#include <stdio.h>
 
-int		ft_isalpha(int c)
+int		main()
 {
-	if ((c > 64 && c < 91) || (c > 96 && c < 123))
-		return (1);
-	else
-		return (0);
+	char	*str = "abcde123";
+	int		i;
+
+	i = 0;
+	while (ft_isalpha(str[i]) == 1)
+		i++;
+	printf("i = %d\n", i);
+	return (0);
 }
