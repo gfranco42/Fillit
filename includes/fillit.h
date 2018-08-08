@@ -6,7 +6,7 @@
 /*   By: gfranco <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/18 12:00:06 by gfranco           #+#    #+#             */
-/*   Updated: 2018/08/06 17:16:19 by gfranco          ###   ########.fr       */
+/*   Updated: 2018/08/07 16:34:43 by gfranco          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,9 +53,11 @@ typedef struct		s_begin
 
 //int					ft_4x4(char *str);
 int					ft_check(char *str);
-int					ft_check2(char *str);
 void				ft_error(int ac, char **av, int fd);
+void				ft_error2(int fd);
+int					ft_is_near(char **array);
 char				**ft_file_split(char *str);
+void				ft_free_arr(char **array);
 t_piece				*ft_stocktetri(char *file);
 size_t				ft_counttetri(char *str);
 char				*ft_file_cpy(int ac, char **av);
@@ -71,7 +73,6 @@ char				*ft_file_cpy(int ac, char **av);
 //char				**ft_strsplit(char const *s, char c);
 //char				*ft_strsub(char const *s, unsigned int start, size_t len);
 // FUNCTIONS BELOW ARE HERE ONLY FOR TEST IN MAIN.C
-int					ft_is_near(char **array);
 //int					ft_count_hash(char *str);
 //int					ft_count_bn(char *str);
 //int					ft_count_dot(char *str);

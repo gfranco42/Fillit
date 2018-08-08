@@ -6,7 +6,7 @@
 /*   By: gfranco <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/18 11:36:58 by gfranco           #+#    #+#             */
-/*   Updated: 2018/08/06 17:21:47 by gfranco          ###   ########.fr       */
+/*   Updated: 2018/08/08 17:11:13 by gfranco          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int		main(int ac, char **av)
 {
 	char	*str;
 	char	**array;
-	int		i;
+	size_t	i;
 
 	i = 0;
 	str = ft_file_cpy(ac, av);//		CHANGER FONCTION CHECK2 !!!!
@@ -34,11 +34,21 @@ int		main(int ac, char **av)
 //	printf("Must display 0...\nresult : %d\n", i);
 //	printf("\033[0;32mft_is_near : %d\n", ft_is_near(str));
 //
-//	while (i < 5)
-//	{
-	printf("result : %d\n", ft_is_near(array));
-//		i++;
-//	}
+	while (i < ft_counttetri(str))
+	{
+		printf("%s", array[i]);
+		i++;
+	}
+	printf("check : %d\n", ft_check(str));
+	printf("is near : %d\n", ft_is_near(array));
+	i = 0;
+	while (array[i])
+	{
+		free(array[i]);
+		i++;
+	}
+	free(array);
+//	array = NULL;
 //
 //	printf("%s\n", ft_file_cpy(ac, av));//				--->TEST OPENING FILE
 //	char	sA[] = "....\n....\n....\n....\n\n....\n....\n....\n....\n";//		---> test with ft_4x4.c

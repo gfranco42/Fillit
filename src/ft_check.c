@@ -6,7 +6,7 @@
 /*   By: gfranco <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/18 12:09:01 by gfranco           #+#    #+#             */
-/*   Updated: 2018/08/06 16:39:54 by gfranco          ###   ########.fr       */
+/*   Updated: 2018/08/07 14:19:34 by gfranco          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,35 +105,8 @@ int		ft_bad_char(char *str)
 	}
 	return (0);
 }
-/*
-int		ft_is_near(char *str)
-{
-	int		i;
-	int		count;
 
-	i = 0;
-	count = 0;
-	while (str[i])
-	{
-		if (str[i] == '#' && (str[i + 1] == '#'))
-			count++;
-		else if (str[i] == '#' && (str[i + 5] == '#'))
-			count++;
-		if (str[i] == '#' && str[i - 1] == '#')
-			count++;
-		if (str[i] == '#' && str[i - 5] == '#')
-			count++;
-		i++;
-		if (str[i] == '\n' && str[i + 1] == '\n')
-			count = 0;
-	}
-	printf("%d", count);
-	if (count == 0 || (count % 5 != 0 && count % 6 != 0))
-		return (1);
-	return (0);
-}*/
-
-int		ft_check2(char *str)
+int		ft_check(char *str)
 {
 /*	printf ("ft_count_hash2 : %d\n", ft_count_hash(str));
 	printf ("ft_count_bn2 : %d\n", ft_count_bn(str));
