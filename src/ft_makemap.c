@@ -1,13 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_fillmap.c                                       :+:      :+:    :+:   */
+/*   ft_makemap.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gfranco <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/06/18 12:09:20 by gfranco           #+#    #+#             */
-/*   Updated: 2018/06/18 12:09:31 by gfranco          ###   ########.fr       */
+/*   Created: 2018/08/21 14:02:05 by gfranco           #+#    #+#             */
+/*   Updated: 2018/08/21 14:04:54 by gfranco          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include  "fillit.h"
+#include "../includes/fillit.h"
+
+char		*ft_makemap(int size)
+{
+	int		i;
+	int		count;
+	int		len;
+	char	*str;
+
+	i = 0;
+	count = 0;
+	len = size * (size + 1) + 1;
+	if (!(str = (char*)ft_memalloc(sizeof(*str) * len)))
+		return (NULL);
+	while (i < len)
+	{
+		while (count < size)
+			str[i++] = '.';
+		str[i++] = '\n';
+		count = 0;
+	}
+	str[i] = '\0';
+	return (str);
+}
