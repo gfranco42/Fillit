@@ -6,7 +6,7 @@
 /*   By: gfranco <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/11 14:28:12 by gfranco           #+#    #+#             */
-/*   Updated: 2018/07/24 13:50:58 by gfranco          ###   ########.fr       */
+/*   Updated: 2018/08/23 15:25:52 by gfranco          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,8 @@ char	*ft_file_cpy(int ac, char **av)
 	fd = open(av[1], O_RDONLY);
 	ft_error(ac, av, fd);
 	res = read(fd, buf, B_SIZE);
-	if (!(str = (char *)ft_memalloc(sizeof(char *) * res + 1)))
-		ft_error(ac, av, -2);
+	if (!(str = (char *)malloc(sizeof(char *) * res + 1)))
+		ft_error2(-2);
 	ft_strncpy(str, (const char*)buf, res);
 	close(fd);
 	return (str);

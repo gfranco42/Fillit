@@ -6,7 +6,7 @@
 #    By: gfranco <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/06/01 18:05:34 by gfranco           #+#    #+#              #
-#    Updated: 2018/08/07 16:35:07 by gfranco          ###   ########.fr        #
+#    Updated: 2018/08/28 14:35:35 by gfranco          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,10 +25,11 @@ SRC = ft_check.c              \
 	  ft_is_near.c            \
 	  ft_file_cpy.c           \
 	  ft_file_split.c         \
-	  ft_free_arr.c           \
+	  ft_makemap.c            \
 	  ft_memalloc.c           \
 	  ft_memset.c             \
 	  ft_prtcpy.c             \
+	  ft_stockblocks.c        \
 	  ft_strlen.c             \
 	  ft_strncpy.c            \
 	  main.c                  \

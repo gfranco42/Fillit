@@ -6,7 +6,7 @@
 /*   By: gfranco <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/21 14:02:05 by gfranco           #+#    #+#             */
-/*   Updated: 2018/08/21 14:04:54 by gfranco          ###   ########.fr       */
+/*   Updated: 2018/08/21 16:08:18 by gfranco          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,10 @@ char		*ft_makemap(int size)
 	i = 0;
 	count = 0;
 	len = size * (size + 1) + 1;
-	if (!(str = (char*)ft_memalloc(sizeof(*str) * len)))
-		return (NULL);
-	while (i < len)
+	str = (char*)ft_memalloc(len);
+	while (i < len - 1)
 	{
-		while (count < size)
+		while (count++ < size)
 			str[i++] = '.';
 		str[i++] = '\n';
 		count = 0;

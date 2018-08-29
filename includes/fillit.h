@@ -6,7 +6,7 @@
 /*   By: gfranco <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/18 12:00:06 by gfranco           #+#    #+#             */
-/*   Updated: 2018/08/07 16:34:43 by gfranco          ###   ########.fr       */
+/*   Updated: 2018/08/28 14:36:26 by gfranco          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,13 @@ typedef struct		s_stock
 	struct s_stock	*next;
 }					t_stock;*/
 
-typedef struct		s_piece
+typedef struct		s_pos
+{
+	int		x[4];
+	int		y[4];
+}					t_pos;
+
+/*typedef struct		s_piece
 {
 	char			tetri[23];
 	struct s_piece *next;
@@ -48,8 +54,8 @@ typedef struct		s_piece
 
 typedef struct		s_begin
 {
-    t_piece			*begin;
-}					t_begin;;
+    t_pos			*begin;
+}					t_begin;*/
 
 //int					ft_4x4(char *str);
 int					ft_check(char *str);
@@ -57,8 +63,9 @@ void				ft_error(int ac, char **av, int fd);
 void				ft_error2(int fd);
 int					ft_is_near(char **array);
 char				**ft_file_split(char *str);
-void				ft_free_arr(char **array);
-t_piece				*ft_stocktetri(char *file);
+char				*ft_makemap(int size);
+t_pos				ft_stockblocks(char *str);
+//t_piece				*ft_stocktetri(char *file);
 size_t				ft_counttetri(char *str);
 char				*ft_file_cpy(int ac, char **av);
 //void				*ft_memalloc(size_t size);

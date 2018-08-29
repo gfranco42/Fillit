@@ -6,7 +6,7 @@
 /*   By: gfranco <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/06 12:35:01 by gfranco           #+#    #+#             */
-/*   Updated: 2018/08/08 17:23:38 by gfranco          ###   ########.fr       */
+/*   Updated: 2018/08/23 15:26:10 by gfranco          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,19 +21,13 @@ char			**ft_array_making(int nbr)
 	i = 0;
 	j = 0;
 	if (!(array = (char**)malloc(sizeof(*array) * nbr + 1)))
-		return (NULL);
+		ft_error2(-2);
 	while (i++ < nbr + 1)
 	{
 		if (i < nbr)
-		{
-			if (!(array[j++] = (char*)ft_memalloc(22)))
-				return (NULL);
-		}
+			array[j++] = (char*)ft_memalloc(22);
 		else
-		{
-			if (!(array[j] = (char*)ft_memalloc(1)))
-				return (NULL);
-		}
+			array[j] = (char*)ft_memalloc(1);
 	}
 	return (array);
 }

@@ -6,7 +6,7 @@
 /*   By: gfranco <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/18 11:36:58 by gfranco           #+#    #+#             */
-/*   Updated: 2018/08/08 17:11:13 by gfranco          ###   ########.fr       */
+/*   Updated: 2018/08/28 16:57:27 by gfranco          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,33 +21,47 @@
  * Thank you girls!
 */
 
-int		main(int ac, char **av)
+int		main(/*int ac, char **av*/)
 {
-	char	*str;
-	char	**array;
-	size_t	i;
+	char	*str = "....\n...#\n..##\n..#.\n";
+	t_pos		block;
+	int		i;
 
+	block = ft_stockblocks(str);
+	printf("A\n");
 	i = 0;
-	str = ft_file_cpy(ac, av);//		CHANGER FONCTION CHECK2 !!!!
-	array = ft_file_split(str);
+	while (i < 4)
+	{
+		printf("x = %d & y = %d\n", block.x[i], block.y[i]);
+		i++;
+	}
+//	char	**array;
+//	size_t	i;
+//	printf("A\n");
+//	str = ft_makemap(15);
+//	printf("\033[1;32mMAP:\033[0m\n%s\n", str);
+//	free(str);
+//	i = 0;
+//	str = ft_file_cpy(ac, av);//		CHANGER FONCTION CHECK2 !!!!
+//	array = ft_file_split(str);
 //	i = ft_check(str);//				TAPER MAKE RE POUR VOIR
 //	printf("Must display 0...\nresult : %d\n", i);
 //	printf("\033[0;32mft_is_near : %d\n", ft_is_near(str));
 //
-	while (i < ft_counttetri(str))
-	{
-		printf("%s", array[i]);
-		i++;
-	}
-	printf("check : %d\n", ft_check(str));
-	printf("is near : %d\n", ft_is_near(array));
-	i = 0;
-	while (array[i])
-	{
-		free(array[i]);
-		i++;
-	}
-	free(array);
+//	while (i < ft_counttetri(str))
+//	{
+//		printf("%s", array[i]);
+//		i++;
+//	}
+//	printf("check : %d\n", ft_check(str));
+//	printf("is near : %d\n", ft_is_near(array));
+//	i = 0;
+//	while (array[i])
+//	{
+//		free(array[i]);
+//		i++;
+//	}
+//	free(array);
 //	array = NULL;
 //
 //	printf("%s\n", ft_file_cpy(ac, av));//				--->TEST OPENING FILE

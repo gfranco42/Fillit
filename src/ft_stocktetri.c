@@ -5,51 +5,41 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: gfranco <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/06/18 12:10:47 by gfranco           #+#    #+#             */
-/*   Updated: 2018/07/18 15:53:54 by gfranco          ###   ########.fr       */
+/*   Created: 2018/08/28 13:42:16 by gfranco           #+#    #+#             */
+/*   Updated: 2018/08/28 18:05:57 by gfranco          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/fillit.h"
 
-t_piece		*ft_init(char *file)
+int			***ft_stocktetri(char **tab, t_pos block, char *file)
 {
-    t_piece     *tetriminos;
-    t_begin     *start;
-
-	if (!(tetriminos = (t_piece*)malloc(sizeof(t_piece*))))
-		exit(EXIT_FAILURE);
-	if (!(start = (t_begin*)malloc(sizeof(t_begin*))))
-		exit(EXIT_FAILURE);
-	tetriminos->next = NULL;
-	start->begin = tetriminos;
-
-	return (start->begin);
-}
-
-t_piece		*ft_addelem(char *str)
-{
-	t_piece	*new;
-
-	if (!(new = (t_piece*)malloc(sizeof(t_piece*))))
-		exit(EXIT_FAILURE);
-	new
-	return (new);
-}
-
-t_piece     *ft_stocktetri(char *file)
-{
-	t_piece		*piece;
-	t_begin		*start;
-	int			i;
+	int		***array;
+	int		nbr;
+	int		i;
+	int		j;
+	int		k;
 
 	i = 0;
-	piece = ft_init(file);
-	while (i < ft_counttetri(file))
+	j = 0;
+	k = 0;
+	nbr = ft_counttetri(file);
+	if (!(array = (int***)malloc(sizeof(***array) * nbr)))
+			ft_error2(-2);
+	while (nbr-- > 0)
 	{
-		ft_strncpy(piece->tetri, file, 21);
-		piece->tetri[22] = '\0';
-		piece = piece->next;
+		if (!(array[j++] = (int**)malloc(sizeof(**array) * 2)))
+			ft_error2(-2);
+		while (i++ < 2)
+			if (!(array[j][k] = (int*)malloc(sizeof(*array) * 4)))
+				ft_error2(-2);
 	}
-	return (start->begin);
+	return (array);
 }
+
+
+/*	A COMPLETER
+ *
+ *	1) secure MALLOCS
+ *	2)fonction de copie
+*/
