@@ -6,7 +6,7 @@
 /*   By: gfranco <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/07 14:00:58 by gfranco           #+#    #+#             */
-/*   Updated: 2018/08/08 18:13:46 by gfranco          ###   ########.fr       */
+/*   Updated: 2018/08/30 19:15:50 by gfranco          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,3 +99,10 @@ Permet de verifier:
 
 Ce fichier contient les "blocs" de tetri.
 C'est le fichier de test ==> ./fillit text ;
+
+
+NOTE :
+1/ FONCTION augmentation map (cf. exemple carre et L)
+2/ FONCTION deplacement piece
+3/ FONCTION recupere taille map
+4/ FONCTION pour overlap

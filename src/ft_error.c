@@ -6,11 +6,12 @@
 /*   By: gfranco <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/10 15:48:25 by gfranco           #+#    #+#             */
-/*   Updated: 2018/08/23 15:25:59 by gfranco          ###   ########.fr       */
+/*   Updated: 2018/08/29 18:05:44 by gfranco          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/fillit.h"
+
 void	ft_error2(int fd)
 {
 	if (fd == -2)

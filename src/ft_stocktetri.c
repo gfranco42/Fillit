@@ -6,7 +6,7 @@
 /*   By: gfranco <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/28 13:42:16 by gfranco           #+#    #+#             */
-/*   Updated: 2018/08/28 18:05:57 by gfranco          ###   ########.fr       */
+/*   Updated: 2018/08/30 19:22:47 by gfranco          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,6 @@ int			***ft_stocktetri(char **tab, t_pos block, char *file)
 	}
 	return (array);
 }
-
-
 /*	A COMPLETER
  *
  *	1) secure MALLOCS

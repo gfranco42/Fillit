@@ -6,7 +6,7 @@
 /*   By: gfranco <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/18 12:00:06 by gfranco           #+#    #+#             */
-/*   Updated: 2018/08/28 14:36:26 by gfranco          ###   ########.fr       */
+/*   Updated: 2018/08/29 17:36:16 by gfranco          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,8 +63,10 @@ void				ft_error(int ac, char **av, int fd);
 void				ft_error2(int fd);
 int					ft_is_near(char **array);
 char				**ft_file_split(char *str);
-char				*ft_makemap(int size);
+char				**ft_fill_tetri(char **map, t_pos block, int V, int H);
+char				**ft_makemap(int size);
 t_pos				ft_stockblocks(char *str);
+char				**ft_strsplit(char const *s, char c);
 //t_piece				*ft_stocktetri(char *file);
 size_t				ft_counttetri(char *str);
 char				*ft_file_cpy(int ac, char **av);

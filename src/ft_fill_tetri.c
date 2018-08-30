@@ -1,35 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_makemap.c                                       :+:      :+:    :+:   */
+/*   ft_fill_tetri.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gfranco <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/08/21 14:02:05 by gfranco           #+#    #+#             */
-/*   Updated: 2018/08/29 15:58:33 by gfranco          ###   ########.fr       */
+/*   Created: 2018/08/29 16:22:22 by gfranco           #+#    #+#             */
+/*   Updated: 2018/08/30 18:41:28 by gfranco          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/fillit.h"
 
-char		**ft_makemap(int size)
+char			**ft_fill_tetri(char **map, t_pos block, int V, int H)
 {
-	int		i;
-	int		count;
-	int		len;
-	char	*str;
+	int			i;
 
 	i = 0;
-	count = 0;
-	len = size * (size + 1) + 1;
-	str = (char*)ft_memalloc(len);
-	while (i < len - 1)
+	while (i < 4)
 	{
-		while (count++ < size)
-			str[i++] = '.';
-		str[i++] = '\n';
-		count = 0;
+		if (block.x[i] + V > 4 || block.y[i] + H > 4)
+			return (map);
+		i++;
 	}
-	str[i] = '\0';
-	return (ft_strsplit(str, '\n'));
+	i = 0;
+	while (i < 4 && map[block.x[i] + V][block.y[i] + H] == '.')
+	{
+		map[block.x[i] + V][block.y[i] + H] = '#';
+		i++;
+	}
+	return (map);
 }

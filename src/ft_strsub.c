@@ -1,35 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_makemap.c                                       :+:      :+:    :+:   */
+/*   ft_strsub.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gfranco <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/08/21 14:02:05 by gfranco           #+#    #+#             */
-/*   Updated: 2018/08/29 15:58:33 by gfranco          ###   ########.fr       */
+/*   Created: 2018/04/19 10:42:42 by gfranco           #+#    #+#             */
+/*   Updated: 2018/05/17 11:28:23 by gfranco          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/fillit.h"
+#include "libft.h"
 
-char		**ft_makemap(int size)
+char	*ft_strsub(char const *s, unsigned int start, size_t len)
 {
-	int		i;
-	int		count;
-	int		len;
-	char	*str;
+	char	*tab;
+	size_t	a;
+	size_t	b;
 
-	i = 0;
-	count = 0;
-	len = size * (size + 1) + 1;
-	str = (char*)ft_memalloc(len);
-	while (i < len - 1)
+	a = 0;
+	b = 0;
+	if (!s)
+		return (NULL);
+	if (!(tab = (char*)ft_memalloc(sizeof(char) * (len + 1))))
+		return (NULL);
+	if (len == 0)
+		return (tab);
+	while (a < len)
 	{
-		while (count++ < size)
-			str[i++] = '.';
-		str[i++] = '\n';
-		count = 0;
+		tab[a++] = s[start++];
 	}
-	str[i] = '\0';
-	return (ft_strsplit(str, '\n'));
+	return (tab);
 }

@@ -6,7 +6,7 @@
 /*   By: gfranco <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/06 12:35:01 by gfranco           #+#    #+#             */
-/*   Updated: 2018/08/23 15:26:10 by gfranco          ###   ########.fr       */
+/*   Updated: 2018/08/30 16:12:25 by gfranco          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ char			**ft_array_making(int nbr)
 	{
 		if (i < nbr)
 			array[j++] = (char*)ft_memalloc(22);
+		if (i == nbr - 1)
+			array[j++] = (char*)ft_memalloc(21);
 		else
 			array[j] = (char*)ft_memalloc(1);
 	}
@@ -34,7 +36,7 @@ char			**ft_array_making(int nbr)
 
 char			**ft_file_split(char *str)
 {
-	size_t			i_arr;
+	size_t		i_arr;
 	size_t		i;
 	size_t		nbr;
 	char		**array;
@@ -42,7 +44,7 @@ char			**ft_file_split(char *str)
 	i_arr = 0;
 	i = 0;
 	nbr = ft_counttetri(str);
-	if (ft_strlen(str) % 21 != 0 || ft_check(str) != 0 || nbr > 26)
+	if ((ft_strlen(str) + 1) % 21 != 0 || ft_check(str) != 0 || nbr > 26)
 		ft_error2(-3);
 	array = ft_array_making(nbr);
 	while (i_arr < nbr)

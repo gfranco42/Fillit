@@ -6,7 +6,7 @@
 /*   By: gfranco <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/18 11:36:58 by gfranco           #+#    #+#             */
-/*   Updated: 2018/08/28 16:57:27 by gfranco          ###   ########.fr       */
+/*   Updated: 2018/08/30 18:38:23 by gfranco          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,46 +21,135 @@
  * Thank you girls!
 */
 
-int		main(/*int ac, char **av*/)
+int				main(int ac, char **av)
 {
-	char	*str = "....\n...#\n..##\n..#.\n";
+	char		*str = ft_file_cpy(ac, av);
+	char		**array = ft_file_split(str);
 	t_pos		block;
-	int		i;
-
-	block = ft_stockblocks(str);
-	printf("A\n");
-	i = 0;
+	int			i = 0;
+	char		**map = ft_makemap(5);
+//	printf("ft_check = %d\n", ft_check(str));
+//	printf("ft_is near = %d\n", ft_is_near(array));
+//	printf("%s\n", array[0]);
+//	printf("%s\n", array[1]);
+	block = ft_stockblocks(array[0]);
 	while (i < 4)
 	{
-		printf("x = %d & y = %d\n", block.x[i], block.y[i]);
+		printf("x: %d y: %d\n", block.x[i], block.y[i]);
 		i++;
 	}
-//	char	**array;
-//	size_t	i;
-//	printf("A\n");
+	block = ft_stockblocks(array[1]);
+	while (i < 4)
+	{
+		printf("x1: %d y2: %d\n", block.x[i], block.y[i]);
+		i++;
+	}
+	block = ft_stockblocks(array[0]);
+	printf("%s\n", map[0]);
+	printf("%s\n", map[1]);
+	printf("%s\n", map[2]);
+	printf("%s\n", map[3]);
+	map = ft_fill_tetri(map, block, 0, 0);
+	printf("first fill:\n");
+	printf("%s\n", map[0]);
+	printf("%s\n", map[1]);
+	printf("%s\n", map[2]);
+	printf("%s\n", map[3]);
+	block = ft_stockblocks(array[1]);
+	map = ft_fill_tetri(map, block, 0, 2);
+	printf("second fill:\n");
+	printf("%s\n", map[0]);
+	printf("%s\n", map[1]);
+	printf("%s\n", map[2]);
+	printf("%s\n", map[3]);
+	block = ft_stockblocks(array[2]);
+	map = ft_fill_tetri(map, block, 2, 3);
+	printf("third fill:\n");
+	printf("%s\n", map[0]);
+	printf("%s\n", map[1]);
+	printf("%s\n", map[2]);
+	printf("%s\n", map[3]);
+	/*
+	char		*str;
+	char		*test = "";
+	char		**tab;
+	char		**array;
+	t_pos		block;
+	int			i;
+	int			idx;
+	int			count;
+	int			V;
+	int			H;
+
+	V = 0;
+	H = 0;
+	idx = 0;
+	count = 4;
+	str = ft_file_cpy(ac, av);
+	array = ft_file_split(str);
+	tab = ft_makemap(count);//							1) Creating the map
+	i = 0;
+	printf("\033[1;33mCLEAN MAP :\033[0m\n\n");
+	while (count-- > 0)
+	{
+		printf("%s\n", tab[i]);
+		i++;
+	}
+	printf("\n");
+	printf("\033[1;33mFILLED MAP :\033[0m\n\n");
+	count = 4;
+	block = ft_stockblocks(array[idx]);//		2) Stock tetris in an array
+	while (count-- > 0)
+	{
+		printf("x: %d y: %d\n", block.x[i], block.y[i]);
+		i++;
+	}
+	count = 4;
+	tab = ft_fill_tetri(tab, block, V, H);//	3)Put tetri from block
+	block = ft_stockblocks(array[idx + 1]);
+	while (count-- > 0)
+	{
+		printf("x: %d y: %d\n", block.x[i], block.y[i]);
+		i++;
+	}
+	count = 4;
+	tab = ft_fill_tetri(tab, block, V, H);
+	//													to tab
+	i = 0;
+	while (count-- > 0)
+	{
+		printf("%s\n", tab[i]);
+		i++;
+	}
+	printf("\n");
+	free(tab);*/
+/*	char	**array;
+	char	*str;
+	size_t		i;
 //	str = ft_makemap(15);
 //	printf("\033[1;32mMAP:\033[0m\n%s\n", str);
 //	free(str);
-//	i = 0;
-//	str = ft_file_cpy(ac, av);//		CHANGER FONCTION CHECK2 !!!!
-//	array = ft_file_split(str);
-//	i = ft_check(str);//				TAPER MAKE RE POUR VOIR
-//	printf("Must display 0...\nresult : %d\n", i);
-//	printf("\033[0;32mft_is_near : %d\n", ft_is_near(str));
-//
-//	while (i < ft_counttetri(str))
-//	{
-//		printf("%s", array[i]);
-//		i++;
-//	}
-//	printf("check : %d\n", ft_check(str));
-//	printf("is near : %d\n", ft_is_near(array));
-//	i = 0;
-//	while (array[i])
-//	{
-//		free(array[i]);
-//		i++;
-//	}
+	i = 0;
+	str = ft_file_cpy(ac, av);//		CHANGER FONCTION CHECK2 !!!!
+	array = ft_file_split(str);
+	i = ft_check(str);//				TAPER MAKE RE POUR VOIR
+	printf("Must display 0...\nresult : %zu\n", i);
+	printf("len = %zu\n", ft_strlen(str));
+	printf("\033[0;32mft_is_near : %d\n\033[0m", ft_is_near(array));
+
+	while (i < ft_counttetri(str))
+	{
+		printf("%s", array[i]);
+		i++;
+	}
+	printf("check : %d\n", ft_check(str));
+	printf("is near : %d\n", ft_is_near(array));
+	i = 0;
+	while (array[i])
+	{
+		free(array[i]);
+		i++;
+	}*/
 //	free(array);
 //	array = NULL;
 //
