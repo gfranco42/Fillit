@@ -6,7 +6,7 @@
 /*   By: gfranco <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/18 11:36:58 by gfranco           #+#    #+#             */
-/*   Updated: 2018/08/30 18:38:23 by gfranco          ###   ########.fr       */
+/*   Updated: 2018/09/03 16:30:43 by gfranco          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,26 +25,42 @@ int				main(int ac, char **av)
 {
 	char		*str = ft_file_cpy(ac, av);
 	char		**array = ft_file_split(str);
-	t_pos		block;
+	int			nbr = ft_counttetri(str);
+	int			***triple_arr;
+//	t_pos		block;
 	int			i = 0;
-	char		**map = ft_makemap(5);
+	int			k = 0;
+//	char		**map = ft_makemap(5);
 //	printf("ft_check = %d\n", ft_check(str));
 //	printf("ft_is near = %d\n", ft_is_near(array));
 //	printf("%s\n", array[0]);
 //	printf("%s\n", array[1]);
-	block = ft_stockblocks(array[0]);
-	while (i < 4)
+	triple_arr = ft_stocktetri(array, nbr);
+
+	free(triple_arr);
+	while (i < nbr)
 	{
-		printf("x: %d y: %d\n", block.x[i], block.y[i]);
+		while (k < 4)
+		{
+			printf("x[%d]: \033[1;32m%d\033[0m y[%d]: \033[1;32m%d\033[0m\n", k, triple_arr[i][0][k], k, triple_arr[i][1][k]);
+			k++;
+		}
+		printf("\n");
+		i++;
+		k = 0;
+	}
+	free(str);
+	while (i < nbr)
+	{
+		free(array[i]);
+		free(triple_arr[i][0]);
+		free(triple_arr[i][1]);
+		free(triple_arr[i]);
 		i++;
 	}
-	block = ft_stockblocks(array[1]);
-	while (i < 4)
-	{
-		printf("x1: %d y2: %d\n", block.x[i], block.y[i]);
-		i++;
-	}
-	block = ft_stockblocks(array[0]);
+	free(array);
+//	while (i < )
+/*	block = ft_stockblocks(array[0]);
 	printf("%s\n", map[0]);
 	printf("%s\n", map[1]);
 	printf("%s\n", map[2]);
@@ -69,7 +85,8 @@ int				main(int ac, char **av)
 	printf("%s\n", map[1]);
 	printf("%s\n", map[2]);
 	printf("%s\n", map[3]);
-	/*
+*/
+/*
 	char		*str;
 	char		*test = "";
 	char		**tab;

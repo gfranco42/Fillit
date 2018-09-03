@@ -6,7 +6,7 @@
 /*   By: gfranco <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/18 12:00:06 by gfranco           #+#    #+#             */
-/*   Updated: 2018/08/29 17:36:16 by gfranco          ###   ########.fr       */
+/*   Updated: 2018/09/03 14:26:51 by gfranco          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,7 @@ char				**ft_file_split(char *str);
 char				**ft_fill_tetri(char **map, t_pos block, int V, int H);
 char				**ft_makemap(int size);
 t_pos				ft_stockblocks(char *str);
+int					***ft_stocktetri(char **str, int nbr);
 char				**ft_strsplit(char const *s, char c);
 //t_piece				*ft_stocktetri(char *file);
 size_t				ft_counttetri(char *str);
