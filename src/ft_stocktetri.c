@@ -6,7 +6,7 @@
 /*   By: gfranco <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/28 13:42:16 by gfranco           #+#    #+#             */
-/*   Updated: 2018/09/03 16:34:32 by gfranco          ###   ########.fr       */
+/*   Updated: 2018/09/03 17:03:25 by gfranco          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,29 +45,20 @@ int			***ft_stocktetri(char **str, int nbr)
 	t_pos	block;
 	int		***array;
 
-	printf("A\n");
 	array = ft_stocking_array(nbr);
-	printf("B\n");
 	i = 0;
 	while (i < nbr)
 	{
-		printf("C\n");
 		block = ft_stockblocks(str[i]);
-		printf("D\n");
 		k = 0;
 		while (k < 4)
 		{
-			printf("E\n");
 			array[i][0][k] = block.x[k];
-			printf("F\n");
 			array[i][1][k] = block.y[k];
-			printf("G\n");
 			k++;
 		}
-		printf("H\n");
 		i++;
 	}
-	printf("I\n");
 	return (array);
 }
 /*	A COMPLETER
