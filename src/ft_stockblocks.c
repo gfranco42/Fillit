@@ -6,7 +6,7 @@
 /*   By: gfranco <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/28 14:09:13 by gfranco           #+#    #+#             */
-/*   Updated: 2018/08/30 16:13:20 by gfranco          ###   ########.fr       */
+/*   Updated: 2018/09/04 13:13:22 by gfranco          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,9 +82,9 @@ t_pos		ft_stockblocks(char *str)
 		while (str[i] != '#')
 			i++;
 		block.x[j] = i / 5;
-//		printf("x[j] = %d ", block.x[j]);
-		block.y[j++] = i++ % 5;
-//		printf("y[j] = %d\n", block.y[j]);
+		block.y[j] = i % 5;
+		j++;
+		i++;
 	}
 	save = ft_check_min_x(block);
 	if (save != 0)

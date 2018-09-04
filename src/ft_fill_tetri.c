@@ -6,25 +6,22 @@
 /*   By: gfranco <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/29 16:22:22 by gfranco           #+#    #+#             */
-/*   Updated: 2018/08/30 18:41:28 by gfranco          ###   ########.fr       */
+/*   Updated: 2018/09/04 15:53:19 by gfranco          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/fillit.h"
 
-char			**ft_fill_tetri(char **map, t_pos block, int V, int H)
+char			**ft_fill_tetri(char **map, int ***array, int V, int H)
 {
 	int			i;
+	size_t		map_s;
 
 	i = 0;
-	while (i < 4)
-	{
-		if (block.x[i] + V > 4 || block.y[i] + H > 4)
-			return (map);
-		i++;
-	}
+	map_s = ft_strlen(map[0] - 1);
+	printf("map_s == %zu\n", map_s);
 	i = 0;
-	while (i < 4 && map[block.x[i] + V][block.y[i] + H] == '.')
+	while (i < map_s && (map[block.x[i] + V][block.y[i] + H] == '.'))
 	{
 		map[block.x[i] + V][block.y[i] + H] = '#';
 		i++;

@@ -6,7 +6,7 @@
 /*   By: gfranco <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/18 11:36:58 by gfranco           #+#    #+#             */
-/*   Updated: 2018/09/03 16:30:43 by gfranco          ###   ########.fr       */
+/*   Updated: 2018/09/04 15:53:38 by gfranco          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,25 +27,20 @@ int				main(int ac, char **av)
 	char		**array = ft_file_split(str);
 	int			nbr = ft_counttetri(str);
 	int			***triple_arr;
-//	t_pos		block;
+	t_pos		block;
 	int			i = 0;
 	int			k = 0;
-//	char		**map = ft_makemap(5);
+	char		**map = ft_makemap(4);
 //	printf("ft_check = %d\n", ft_check(str));
 //	printf("ft_is near = %d\n", ft_is_near(array));
 //	printf("%s\n", array[0]);
 //	printf("%s\n", array[1]);
 	triple_arr = ft_stocktetri(array, nbr);
-
 	free(triple_arr);
 	while (i < nbr)
 	{
 		while (k < 4)
-		{
-			printf("x[%d]: \033[1;32m%d\033[0m y[%d]: \033[1;32m%d\033[0m\n", k, triple_arr[i][0][k], k, triple_arr[i][1][k]);
 			k++;
-		}
-		printf("\n");
 		i++;
 		k = 0;
 	}

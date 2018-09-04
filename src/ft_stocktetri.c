@@ -6,7 +6,7 @@
 /*   By: gfranco <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/28 13:42:16 by gfranco           #+#    #+#             */
-/*   Updated: 2018/09/03 17:03:25 by gfranco          ###   ########.fr       */
+/*   Updated: 2018/09/04 13:53:19 by gfranco          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,18 +16,16 @@
 int			***ft_stocking_array(int nbr)
 {
 	int		***array;
-	int		i;
 	int		j;
 	int		k;
 
-	i = 0;
 	j = 0;
 	k = 0;
-	if (!(array = (int***)malloc(sizeof(***array) * nbr)))
+	if (!(array = (int***)malloc(sizeof(*array) * nbr)))
 			ft_error2(-2);
 	while (nbr-- > 0)
 	{
-		if (!(array[j] = (int**)malloc(sizeof(**array) * 2)))
+		if (!(array[j] = (int**)malloc(sizeof(*array) * 2)))
 			ft_error2(-2);
 		if (!(array[j][0] = (int*)malloc(sizeof(*array) * 4)))
 			ft_error2(-2);

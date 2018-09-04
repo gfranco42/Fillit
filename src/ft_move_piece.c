@@ -6,33 +6,36 @@
 /*   By: gfranco <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/31 14:07:33 by gfranco           #+#    #+#             */
-/*   Updated: 2018/08/31 15:41:06 by gfranco          ###   ########.fr       */
+/*   Updated: 2018/09/04 15:26:25 by gfranco          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/fillit.h"
 
-int			ft_move_piece(char **map, t_pos block, int *H, int *V)
+void			ft_move_piece(char ***map, t_pos block, int H, int V)
 {
 	int		check;
+	int		map_s;
 	int		i;
 
+	map_s = ft_map_size(&map);
 	i = 0;
-	check = ft_overlap(map, block, &H, &V); // creer function overlap pour check
+	check = ft_overlap(&map, block, H, V); // creer function overlap pour check
 	while (check != 0)//						return (0) si aucun overlap
 	{//											return (1) si overlap
-		&H++;//										move tetri horizontalement
-		check = ft_overlap(map, block, &H, &V);//	re-check si overlap
-		while (i < 4 && block.x[i++] != ft_map_size(map))// check si hors map
+		H++;//										move tetri horizontalement
+		check = ft_overlap(&map, block, H, &V);//	re-check si overlap
+		while (i < map_s && block.x[i++] != ft_map_size(&map))// check si hors map
 		{
-			if (block.x[i] == ft_map_size(map))// si hors map, reviens au debut et decale 1 verticale
+			if (block.x[i] == ft_map_size(&map))// si hors map, reviens au debut et decale 1 verticale
 			{
-				&V++;
-				&H = 0;
+				V++;
+				H = 0;
 			}
 		}
 		i = 0;
 	}
+	return (*map);
 }
 
 Cleared Map
