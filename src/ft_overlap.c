@@ -1,9 +1,9 @@
-int     ft_overlap(int nbr)
+int     ft_overlap(char **str, int nbr)
 {
     int i; //placeholder for outcome
     int n; //tetris index no.
-    int j; //
-    char    **str;
+    int j; //index for #s
+//    char    **str;
     int     ***array;
     
     i = 0;
@@ -16,13 +16,13 @@ int     ft_overlap(int nbr)
         j = 0;
         while (j < 4)
         {
-            if ((str[n][0][j] == str[n + 1][0][j]) && (str[n][1][j] == str[n + 1][1][j]))
+            if ((array[n][0][j] == array[n + 1][0][j]) && (array[n][1][j] == array[n + 1][1][j]))
                 i = 1;
             j++;
         }
         n++;
     }
 //  printf("overlap exists if this is 1: %d\n", ft_overlap(block, nbr));
-    printf("overlap exists if this is 1: %d\n", ft_overlap(nbr));
+//    printf("overlap exists if this is 1: %d\n", ft_overlap(str, nbr));
     return (i);
 }
