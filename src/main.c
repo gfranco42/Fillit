@@ -21,6 +21,8 @@
  * Thank you girls!
 */
 
+int     ft_overlap(char **str, int nbr); //cabdul-h added this
+
 int				main(int ac, char **av)
 {
 	char		*str = ft_file_cpy(ac, av);
@@ -35,6 +37,7 @@ int				main(int ac, char **av)
 //	printf("ft_is near = %d\n", ft_is_near(array));
 //	printf("%s\n", array[0]);
 //	printf("%s\n", array[1]);
+	printf("overlap exists if this is 1: %d\n", ft_overlap(array, nbr)); //cabdul-h added this
 	triple_arr = ft_stocktetri(array, nbr);
 
 	free(triple_arr);
