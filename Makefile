@@ -29,6 +29,7 @@ SRC = ft_check.c              \
 	  ft_makemap.c            \
 	  ft_memalloc.c           \
 	  ft_memset.c             \
+	  ft_overlap.c		  \
 	  ft_prtcpy.c             \
 	  ft_stockblocks.c        \
 	  ft_stocktetri.c         \
