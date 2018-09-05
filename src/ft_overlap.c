@@ -1,3 +1,5 @@
+#include "../includes/fillit.h"
+
 int     ft_overlap(char **str, int nbr)
 {
     int i; //placeholder for outcome
