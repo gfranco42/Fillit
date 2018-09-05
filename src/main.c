@@ -6,7 +6,7 @@
 /*   By: gfranco <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/18 11:36:58 by gfranco           #+#    #+#             */
-/*   Updated: 2018/09/04 15:53:38 by gfranco          ###   ########.fr       */
+/*   Updated: 2018/09/05 13:52:43 by gfranco          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,40 +23,40 @@
 
 int     ft_overlap(char **str, int nbr); //cabdul-h added this
 
-int				main(int ac, char **av)
+int				main(/*int ac, char **av*/)
 {
-	char		*str = ft_file_cpy(ac, av);
-	char		**array = ft_file_split(str);
-	int			nbr = ft_counttetri(str);
-	int			***triple_arr;
-	t_pos		block;
-	int			i = 0;
-	int			k = 0;
-	char		**map = ft_makemap(4);
+//	char		*str = ft_file_cpy(ac, av);
+//	char		**array = ft_file_split(str);
+//	int			nbr = ft_counttetri(str);
+//	int			***triple_arr;
+//	t_pos		block;
+//	int			i = 0;
+//	int			k = 0;
+//	char		**map = ft_makemap(4);
 //	printf("ft_check = %d\n", ft_check(str));
 //	printf("ft_is near = %d\n", ft_is_near(array));
 //	printf("%s\n", array[0]);
 //	printf("%s\n", array[1]);
-	printf("overlap exists if this is 1: %d\n", ft_overlap(array, nbr)); //cabdul-h added this
-	triple_arr = ft_stocktetri(array, nbr);
-	free(triple_arr);
-	while (i < nbr)
-	{
-		while (k < 4)
-			k++;
-		i++;
-		k = 0;
-	}
-	free(str);
-	while (i < nbr)
-	{
-		free(array[i]);
-		free(triple_arr[i][0]);
-		free(triple_arr[i][1]);
-		free(triple_arr[i]);
-		i++;
-	}
-	free(array);
+//	printf("overlap exists if this is 1: %d\n", ft_overlap(array, nbr)); //cabdul-h added this
+//	triple_arr = ft_stocktetri(array, nbr);
+//	free(triple_arr);
+//	while (i < nbr)
+//	{
+//		while (k < 4)
+//			k++;
+//		i++;
+//		k = 0;
+//	}
+//	free(str);
+//	while (i < nbr)
+//	{
+//		free(array[i]);
+//		free(triple_arr[i][0]);
+//		free(triple_arr[i][1]);
+//		free(triple_arr[i]);
+//		i++;
+//	}
+//	free(array);
 //	while (i < )
 /*	block = ft_stockblocks(array[0]);
 	printf("%s\n", map[0]);
