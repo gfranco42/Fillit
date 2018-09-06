@@ -51,18 +51,18 @@ int ft_match(char **a, char **b) //fn confirms whether the shape of the tetris m
   return (p);
 }*/
 
-int     ft_overlap(char **a, int **array) //fn confirms no. of #s present in the map's double array
+int     ft_overlap(char **a, int **array) //fn confirms if there are #s present in the map's double array
 {
     size_t i; //counter for each line in the map's string, split per \n
-    int k; //counter for each element per line
+    int k; //counter for each element of the array string per line
 
     i = 0;
     k = 0;
-    while (i < ft_strlen(a[0])) //while ith line no < height of map
+    while (i < ft_strlen(a[0])) //while ith line no < length/height of map
     {
-        while (k < 4) //while kth element in current line < width of map 
+        while (k < 4) //while kth element in the array's current line < final index no. 
         {
-            if (a[array[0][k]][array[1][k]] == '#')
+            if (a[array[0][k]][array[1][k]] == '#') //if the x and y coordinates of the map == # return 1
 				return (1);
             k++; //go through each element of the line
         }
