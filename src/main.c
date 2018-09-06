@@ -6,7 +6,7 @@
 /*   By: gfranco <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/18 11:36:58 by gfranco           #+#    #+#             */
-/*   Updated: 2018/09/06 16:38:43 by gfranco          ###   ########.fr       */
+/*   Updated: 2018/09/06 19:23:24 by gfranco          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,21 +24,19 @@
 
 int				main(/*int ac, char **av*/)
 {
-	char		*str = "...#\n..##\n...#\n....\n";
+	char		*str = "##..\n##..\n....\n....\n";
 //	char		*str = ft_file_cpy(ac, av);
 	char		**array = ft_file_split(str);
 //	int			nbr = ft_counttetri(str);
-	int		nbr = 1;
+	int			nbr = 1;
 	int			***triple_arr;
 //	t_pos		block;
 //	int			i = 0;
-//	int			k = 0;
-	triple_arr = NULL;
 	triple_arr = ft_stocktetri(array, nbr);
-	char		**map = ft_makemap(5);
-	printf("must display 0...\nresult = %d\n", ft_overlap(map, triple_arr[0]));
-	char	*map2[] = { "####.\n", ".....\n", ".....\n", ".....\n" };
-	printf("must display 1...\nresult = %d\n", ft_overlap(map2, triple_arr[0]));
+	char		*map[] = { "#.\n", "..\n"/*, "...\n"*/ };
+	printf("must display 1...\nresult overlap = %d\n", ft_overlap(map, triple_arr[0]));
+	printf("must display 1...\nresult = %d\n", ft_move_piece(map, triple_arr[0]));
+//	char		**map = ft_makemap(5);
 //	map = ft_fill_tetri(map, triple_arr, 0, 0);
 //	printf("ft_check = %d\n", ft_check(str));
 //	printf("ft_is near = %d\n", ft_is_near(array));

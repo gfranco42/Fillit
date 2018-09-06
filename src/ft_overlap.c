@@ -6,7 +6,7 @@
 /*   By: gfranco <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/06 16:16:06 by gfranco           #+#    #+#             */
-/*   Updated: 2018/09/06 16:33:46 by gfranco          ###   ########.fr       */
+/*   Updated: 2018/09/06 19:28:14 by gfranco          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,18 +51,20 @@ int ft_match(char **a, char **b) //fn confirms whether the shape of the tetris m
   return (p);
 }*/
 
-int     ft_overlap(char **a, int **array) //fn confirms no. of #s present in the map's double array
+int     ft_overlap(char **map, int **array) //fn confirms no. of #s present in the map's double array
 {
     size_t i; //counter for each line in the map's string, split per \n
     int k; //counter for each element per line
 
     i = 0;
     k = 0;
-    while (i < ft_strlen(a[0])) //while ith line no < height of map
+	if (ft_borderline(map, array) != 0)
+		return (1);
+    while (i < ft_strlen(map[0])) //while ith line no < height of map
     {
         while (k < 4) //while kth element in current line < width of map 
         {
-            if (a[array[0][k]][array[1][k]] == '#')
+            if (map[array[0][k]][array[1][k]] == '#')
 				return (1);
             k++; //go through each element of the line
         }

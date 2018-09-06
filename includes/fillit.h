@@ -6,7 +6,7 @@
 /*   By: gfranco <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/18 12:00:06 by gfranco           #+#    #+#             */
-/*   Updated: 2018/09/06 16:19:17 by gfranco          ###   ########.fr       */
+/*   Updated: 2018/09/06 19:28:54 by gfranco          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,7 @@ typedef struct		s_begin
 }					t_begin;*/
 
 //int					ft_4x4(char *str);
+int					ft_borderline(char **map, int **array);
 int					ft_check(char *str);
 void				ft_error(int ac, char **av, int fd);
 void				ft_error2(int fd);
@@ -65,6 +66,7 @@ int					ft_is_near(char **array);
 char				**ft_file_split(char *str);
 char				**ft_fill_tetri(char **map, int ***array);
 char				**ft_makemap(int size);
+int					ft_move_piece(char**map, int **array);
 int					ft_overlap(char **map, int **array);
 t_pos				ft_stockblocks(char *str);
 int					***ft_stocktetri(char **str, int nbr);
