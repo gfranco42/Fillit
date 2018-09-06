@@ -6,7 +6,7 @@
 /*   By: gfranco <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/18 11:36:58 by gfranco           #+#    #+#             */
-/*   Updated: 2018/09/06 16:38:43 by gfranco          ###   ########.fr       */
+/*   Updated: 2018/09/06 16:34:29 by gfranco          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,9 +35,9 @@ int				main(/*int ac, char **av*/)
 //	int			k = 0;
 	triple_arr = NULL;
 	triple_arr = ft_stocktetri(array, nbr);
-	char		**map = ft_makemap(5);
+	char		**map = ft_makemap(4);
 	printf("must display 0...\nresult = %d\n", ft_overlap(map, triple_arr[0]));
-	char	*map2[] = { "####.\n", ".....\n", ".....\n", ".....\n" };
+	char	*map2[] = { "####\n", "....\n", "....\n", "....\n" };
 	printf("must display 1...\nresult = %d\n", ft_overlap(map2, triple_arr[0]));
 //	map = ft_fill_tetri(map, triple_arr, 0, 0);
 //	printf("ft_check = %d\n", ft_check(str));

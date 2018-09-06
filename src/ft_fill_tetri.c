@@ -6,24 +6,27 @@
 /*   By: gfranco <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/29 16:22:22 by gfranco           #+#    #+#             */
-/*   Updated: 2018/09/05 13:43:03 by gfranco          ###   ########.fr       */
+/*   Updated: 2018/09/06 14:57:02 by gfranco          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/fillit.h"
 
-char			**ft_fill_tetri(char **map, int ***array, int V, int H)
+char			**ft_fill_tetri(char **map, int ***array)
 {
+	int			**save;
 	int			i;
-	size_t		map_s;
 
 	i = 0;
-	map_s = ft_strlen(map[0] - 1);
-	printf("map_s == %zu\n", map_s);
-	i = 0;
-	while (i < map_s && (map[array[i] + V][block.y[i] + H] == '.'))
+	array = NULL;
+	if (ft_overlap(...) != 0)// check if it overlaps
 	{
-		map[block.x[i] + V][block.y[i] + H] = '#';
+		if (ft_move_piece(map, &array) == 1)// move piece
+			return (map);// if it's impossible to place tetri
+	}//                         return initial map.
+	while (i < 4)// we're here if we can put the tetri on map
+	{
+		map[(*array)[0][i]][(*array)[1][i]] = '#';
 		i++;
 	}
 	return (map);
