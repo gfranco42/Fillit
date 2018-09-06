@@ -6,7 +6,7 @@
 /*   By: gfranco <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/29 16:22:22 by gfranco           #+#    #+#             */
-/*   Updated: 2018/09/06 14:57:02 by gfranco          ###   ########.fr       */
+/*   Updated: 2018/09/06 19:41:27 by gfranco          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,7 @@ char			**ft_fill_tetri(char **map, int ***array)
 	int			i;
 
 	i = 0;
-	array = NULL;
-	if (ft_overlap(...) != 0)// check if it overlaps
+	if (ft_overlap(map, array) != 0)// check if it overlaps
 	{
 		if (ft_move_piece(map, &array) == 1)// move piece
 			return (map);// if it's impossible to place tetri

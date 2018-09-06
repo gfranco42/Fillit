@@ -6,7 +6,7 @@
 /*   By: gfranco <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/31 14:07:33 by gfranco           #+#    #+#             */
-/*   Updated: 2018/09/06 19:25:14 by gfranco          ###   ########.fr       */
+/*   Updated: 2018/09/06 19:40:38 by gfranco          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,24 +79,16 @@ int				ft_move_piece(char **map, int **array)
 	i = 0;
 	while (ft_overlap(map, array) != 0)// while there is an overlap
 	{
-		printf("A\n");
 		ft_increase_y(&array, &count);
 		if (ft_overlap(map, array) == 0)
-		{
-			printf("overlap = %d\n", ft_overlap(map, array));
 			return (0);
-		}
 		if (ft_borderline(map, array) == 1)
 		{
-			printf("C\n");
 			ft_decrease_y(&array, count);
 			ft_increase_x(&array);
 		}
 		if (ft_borderline(map, array) == 2)
-		{
-			printf("D\n");
 			return (1);
-		}
 	}
 	return (0);
 }
