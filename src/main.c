@@ -6,7 +6,7 @@
 /*   By: gfranco <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/18 11:36:58 by gfranco           #+#    #+#             */
-/*   Updated: 2018/09/07 14:45:00 by gfranco          ###   ########.fr       */
+/*   Updated: 2018/09/07 14:58:03 by gfranco          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,11 @@
 
 int				main(/*int ac, char **av*/)
 {
-	char		*str = "##..\n##..\n....\n....\n\n....\n....\n....\n####\n";
+	char		*str = "####\n....\n....\n....\n\n...#\n...#\n...#\n...#\n";
 //	char		*str = ft_file_cpy(ac, av);
 	char		**tab = ft_file_split(str);
 	int			number = ft_counttetri(str);
-	int			nbr = 1;
+	int			nbr = 0;
 	int			***array;
 //	t_pos		block;
 //	int			i = 0;
@@ -42,6 +42,15 @@ int				main(/*int ac, char **av*/)
 		printf("%s\n", map[j]);
 		j++;
 	}
+	map = ft_fill_tetri(map, array[nbr], nbr);
+	printf("\n\033[1;31mFilled map:\033[0m\n");
+	j = 0;
+	while (j < i)
+	{
+		printf("%s\n", map[j]);
+		j++;
+	}
+	nbr++;
 	map = ft_fill_tetri(map, array[nbr], nbr);
 	printf("\n\033[1;31mFilled map:\033[0m\n");
 	j = 0;

@@ -6,7 +6,7 @@
 /*   By: gfranco <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/06 16:16:06 by gfranco           #+#    #+#             */
-/*   Updated: 2018/09/07 14:47:39 by gfranco          ###   ########.fr       */
+/*   Updated: 2018/09/07 14:56:14 by gfranco          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,14 +58,13 @@ int     ft_overlap(char **map, int **array) //fn confirms no. of #s present in t
 
     i = 0;
     k = 0;
-	printf("borderline == %d\n", ft_borderline(map, array));
 	if (ft_borderline(map, array) != 0)
 		return (2);
     while (i < ft_strlen(map[0])) //while ith line no < height of map
     {
         while (k < 4) //while kth element in current line < width of map 
         {
-            if (map[array[0][k]][array[1][k]] == '#')
+            if (map[array[0][k]][array[1][k]] != '.')
 				return (1);
             k++; //go through each element of the line
         }
