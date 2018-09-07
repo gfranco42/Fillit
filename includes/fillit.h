@@ -6,7 +6,7 @@
 /*   By: gfranco <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/18 12:00:06 by gfranco           #+#    #+#             */
-/*   Updated: 2018/09/07 14:42:00 by gfranco          ###   ########.fr       */
+/*   Updated: 2018/09/07 15:27:45 by gfranco          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,6 +73,7 @@ char				**ft_strsplit(char const *s, char c);
 //t_piece				*ft_stocktetri(char *file);
 size_t				ft_counttetri(char *str);
 char				*ft_file_cpy(int ac, char **av);
+char				**ft_upsize_map(int size, char **map);
 //void				*ft_memalloc(size_t size);
 //t_tetri				*ft_memtetri(char *file, int i);
 //void				*ft_memset(void *b, int c, size_t n);

@@ -6,7 +6,7 @@
 /*   By: gfranco <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/18 11:36:58 by gfranco           #+#    #+#             */
-/*   Updated: 2018/09/07 14:58:03 by gfranco          ###   ########.fr       */
+/*   Updated: 2018/09/07 16:21:08 by gfranco          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@
 
 int				main(/*int ac, char **av*/)
 {
-	char		*str = "####\n....\n....\n....\n\n...#\n...#\n...#\n...#\n";
+	char		*str = "####\n....\n....\n....\n\n##..\n##..\n....\n....\n\n..#.\n..#.\n..##\n....\n\n####\n....\n....\n....\n";
 //	char		*str = ft_file_cpy(ac, av);
 	char		**tab = ft_file_split(str);
 	int			number = ft_counttetri(str);
@@ -32,32 +32,34 @@ int				main(/*int ac, char **av*/)
 	int			***array;
 //	t_pos		block;
 //	int			i = 0;
-	int		i = 4;
+	int		ms = 2;
 	int		j = 0;
 	array = ft_stocktetri(tab, number);
-	char		**map = ft_makemap(i);
+	char		**map = ft_makemap(ms);
 	printf("\033[1;33mMap:\033[0m\n");
-	while (j < i)
+	while (j < ms)
 	{
 		printf("%s\n", map[j]);
 		j++;
 	}
-	map = ft_fill_tetri(map, array[nbr], nbr);
-	printf("\n\033[1;31mFilled map:\033[0m\n");
-	j = 0;
-	while (j < i)
+	while (nbr < number)
 	{
-		printf("%s\n", map[j]);
-		j++;
-	}
-	nbr++;
-	map = ft_fill_tetri(map, array[nbr], nbr);
-	printf("\n\033[1;31mFilled map:\033[0m\n");
-	j = 0;
-	while (j < i)
-	{
-		printf("%s\n", map[j]);
-		j++;
+		while (ft_borderline(map, array[nbr]) != 0)
+		{
+			map = ft_upsize_map(++ms, map);
+			nbr = 0;
+		}
+		map = ft_fill_tetri(map, array[nbr], nbr);
+		printf("\n\033[1;31mFilled map:\033[0m\n");
+		j = 0;
+		while (j < ms)
+		{
+			printf("%s\n", map[j]);
+			j++;
+		}
+		nbr++;
+//		if (ft_strlen(map[0]) == (size_t)ms)
+//			nbr = 0;
 	}
 //	map = ft_fill_tetri(map, triple_arr, 0, 0);
 //	printf("ft_check = %d\n", ft_check(str));

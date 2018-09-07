@@ -1,36 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_fill_tetri.c                                    :+:      :+:    :+:   */
+/*   ft_upsize_map.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gfranco <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/08/29 16:22:22 by gfranco           #+#    #+#             */
-/*   Updated: 2018/09/07 15:58:23 by gfranco          ###   ########.fr       */
+/*   Created: 2018/09/07 15:12:17 by gfranco           #+#    #+#             */
+/*   Updated: 2018/09/07 15:47:25 by gfranco          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/fillit.h"
 
-
-
-char			**ft_fill_tetri(char **map, int **array, int n)
+char		**ft_upsize_map(int size, char **map)
 {
-	int			i;
-
+	int		i;
+	
 	i = 0;
-	if (ft_overlap(map, array) != 0)// check if it overlaps
+	while (i < size - 1)
 	{
-		if (ft_move_piece(map, array) == 1)// move piece
-		{
-			map = ft_upsize_map(ft_strlen(map[0]) + 1, map);
-			return (map);// if it's impossible to place tetri
-		}
-	}
-	while (i < 4)
-	{
-		map[array[0][i]][array[1][i]] = n + 65;
+		free(map[i]);
 		i++;
 	}
+	free(map);
+	map = NULL;
+	map = ft_makemap(size);
 	return (map);
 }
