@@ -6,7 +6,7 @@
 /*   By: gfranco <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/18 11:36:58 by gfranco           #+#    #+#             */
-/*   Updated: 2018/09/06 19:23:24 by gfranco          ###   ########.fr       */
+/*   Updated: 2018/09/07 14:45:00 by gfranco          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,19 +24,32 @@
 
 int				main(/*int ac, char **av*/)
 {
-	char		*str = "##..\n##..\n....\n....\n";
+	char		*str = "##..\n##..\n....\n....\n\n....\n....\n....\n####\n";
 //	char		*str = ft_file_cpy(ac, av);
-	char		**array = ft_file_split(str);
-//	int			nbr = ft_counttetri(str);
+	char		**tab = ft_file_split(str);
+	int			number = ft_counttetri(str);
 	int			nbr = 1;
-	int			***triple_arr;
+	int			***array;
 //	t_pos		block;
 //	int			i = 0;
-	triple_arr = ft_stocktetri(array, nbr);
-	char		*map[] = { "#.\n", "..\n"/*, "...\n"*/ };
-	printf("must display 1...\nresult overlap = %d\n", ft_overlap(map, triple_arr[0]));
-	printf("must display 1...\nresult = %d\n", ft_move_piece(map, triple_arr[0]));
-//	char		**map = ft_makemap(5);
+	int		i = 4;
+	int		j = 0;
+	array = ft_stocktetri(tab, number);
+	char		**map = ft_makemap(i);
+	printf("\033[1;33mMap:\033[0m\n");
+	while (j < i)
+	{
+		printf("%s\n", map[j]);
+		j++;
+	}
+	map = ft_fill_tetri(map, array[nbr], nbr);
+	printf("\n\033[1;31mFilled map:\033[0m\n");
+	j = 0;
+	while (j < i)
+	{
+		printf("%s\n", map[j]);
+		j++;
+	}
 //	map = ft_fill_tetri(map, triple_arr, 0, 0);
 //	printf("ft_check = %d\n", ft_check(str));
 //	printf("ft_is near = %d\n", ft_is_near(array));

@@ -6,7 +6,7 @@
 #    By: gfranco <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/06/01 18:05:34 by gfranco           #+#    #+#              #
-#    Updated: 2018/09/06 19:12:21 by gfranco          ###   ########.fr        #
+#    Updated: 2018/09/07 14:28:35 by gfranco          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,13 +19,14 @@ CFLAGS = -Wall -Werror -Wextra -I$(INC_PATH)
 
 SRC_PATH = ./src/
 SRCS = $(addprefix $(SRC_PATH), $(SRC))
-SRC =     ft_borderline.c	  \
+SRC = ft_borderline.c         \
 	  ft_check.c              \
 	  ft_counttetri.c         \
 	  ft_error.c              \
 	  ft_is_near.c            \
 	  ft_file_cpy.c           \
 	  ft_file_split.c         \
+	  ft_fill_tetri.c         \
 	  ft_makemap.c            \
 	  ft_memalloc.c           \
 	  ft_memset.c             \
@@ -41,8 +42,7 @@ SRC =     ft_borderline.c	  \
 	  main.c                  \
 
 #COMMENTS :
-#	  ft_fill_tetri.c         \
-#	  ft_fill_tetri.c         \
+#	  ft_fill_tri.c         \
 #	  ft_open_file.c          \
 #	  ft_strcpy.c             \
 #	  ft_strjoin.c            \

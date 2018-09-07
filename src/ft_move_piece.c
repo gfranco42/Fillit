@@ -6,7 +6,7 @@
 /*   By: gfranco <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/31 14:07:33 by gfranco           #+#    #+#             */
-/*   Updated: 2018/09/06 19:40:38 by gfranco          ###   ########.fr       */
+/*   Updated: 2018/09/07 13:36:52 by gfranco          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,44 +92,3 @@ int				ft_move_piece(char **map, int **array)
 	}
 	return (0);
 }
-/*
-Cleared Map
-....
-....
-....
-....
-
-1st fill:   ##
-            ##
-
-AA.
-AA.
-...
-
-2nd fill:  #
-           #
-           ##
-
-AA..     move by 1 horizontaly...doesn't fill
-AA..     move by 1 more...it fills !
-....
-....         AAB.
-       ==>   AAB.
-             ..BB
-             ....
-
-3rd fill:  #
-           ###
-
-AAB.    move by 1 H...doesn't fill
-AAB.    tetri is at the limit of the square...
-..BB    begin from H = 0 and V + 1 and try again...
-....
-
-		finally must display: AAB.
-                              AAB.
-                              C.BB
-                              CCC.
-
-*/
-// a completer et a verifier !!!

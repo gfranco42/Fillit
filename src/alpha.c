@@ -1,23 +1,26 @@
-char    **ft_alpha(char **map, int **array)
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   alpha.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: gfranco <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2018/09/07 13:51:49 by gfranco           #+#    #+#             */
+/*   Updated: 2018/09/07 14:08:08 by gfranco          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "../includes/fillit.h"
+
+char		**alpha(char **map, int ***array, int n)
 {
-    int i;
-    int j;
-    int c;
-    int d;
-    
-    i = 0;
-    j = 0;
-    c = 0;
-    d = 'A' + c
-    while (i < 4)
-    {
-        while (j < 4)
-        {
-            map[(*array)[0][i][(*array)[1][i]]] = ft_putchar(d);
-            j++;
-        }
-        c++;
-        i++;
-    }
-    return (0);
+	int		i;
+
+	i = 0;
+	while (i < 4)
+	{
+		map[(*array)[0][i]][(*array)[1][i]] = n + 65;
+		i++;
+	}
+    return (map);
 }
