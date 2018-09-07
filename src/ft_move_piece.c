@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include "../includes/fillit.h"
-
+/*
 int			ft_borderline(char **map, int **array)
 {
 	int		i;
@@ -32,7 +32,7 @@ int			ft_borderline(char **map, int **array)
 	}
 	return (0);
 }
-
+*/
 void		ft_increase_x(int ***array)
 {
 	int		i;
