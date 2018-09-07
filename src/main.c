@@ -6,7 +6,7 @@
 /*   By: gfranco <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/18 11:36:58 by gfranco           #+#    #+#             */
-/*   Updated: 2018/09/07 16:21:08 by gfranco          ###   ########.fr       */
+/*   Updated: 2018/09/07 16:28:34 by gfranco          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,8 +58,12 @@ int				main(/*int ac, char **av*/)
 			j++;
 		}
 		nbr++;
-//		if (ft_strlen(map[0]) == (size_t)ms)
-//			nbr = 0;
+		printf("len = %zu\n ms = %zu\n", ft_strlen(map[0]) - 1, (size_t)ms);
+		if (ft_strlen(map[0]) - 1 == (size_t)ms)
+		{
+			ms++;
+			nbr = 0;
+		}
 	}
 //	map = ft_fill_tetri(map, triple_arr, 0, 0);
 //	printf("ft_check = %d\n", ft_check(str));
