@@ -19,7 +19,8 @@ CFLAGS = -Wall -Werror -Wextra -I$(INC_PATH)
 
 SRC_PATH = ./src/
 SRCS = $(addprefix $(SRC_PATH), $(SRC))
-SRC = ft_check.c              \
+SRC =     ft_borderline.c	  \
+	  ft_check.c              \
 	  ft_counttetri.c         \
 	  ft_error.c              \
 	  ft_is_near.c            \
