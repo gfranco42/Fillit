@@ -6,7 +6,7 @@
 /*   By: gfranco <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/18 12:00:06 by gfranco           #+#    #+#             */
-/*   Updated: 2018/09/07 15:27:45 by gfranco          ###   ########.fr       */
+/*   Updated: 2018/09/10 14:30:43 by gfranco          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,13 @@ typedef struct		s_pos
 	int		y[4];
 }					t_pos;
 
+typedef struct		s_dir
+{
+	int		x;
+	int		y;
+	int		ms;
+}					t_dir;
+
 /*typedef struct		s_piece
 {
 	char			tetri[23];
@@ -58,6 +65,7 @@ typedef struct		s_begin
 }					t_begin;*/
 //int					ft_4x4(char *str);
 int					ft_borderline(char **map, int **array);
+int					ft_bt(char **map, int ***array, int nbr, int num, t_dir dir);
 int					ft_check(char *str);
 void				ft_error(int ac, char **av, int fd);
 void				ft_error2(int fd);

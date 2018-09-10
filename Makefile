@@ -6,7 +6,7 @@
 #    By: gfranco <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/06/01 18:05:34 by gfranco           #+#    #+#              #
-#    Updated: 2018/09/07 15:27:08 by gfranco          ###   ########.fr        #
+#    Updated: 2018/09/10 14:13:53 by gfranco          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -40,7 +40,7 @@ SRC = ft_borderline.c         \
 	  ft_strsplit.c           \
 	  ft_strsub.c             \
 	  ft_upsize_map.c         \
-	  main.c                  \
+	  newmainshort.c          \
 
 #COMMENTS :
 #	  ft_fill_tri.c         \
