@@ -6,7 +6,7 @@
 /*   By: gfranco <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/18 11:36:58 by gfranco           #+#    #+#             */
-/*   Updated: 2018/09/10 14:36:53 by gfranco          ###   ########.fr       */
+/*   Updated: 2018/09/10 16:56:34 by gfranco          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,7 @@ int     ft_remove_tet(char **map, int **array, t_dir dir) //fn replaces tetris' 
 
 int     ft_bt(char **map, int ***array, int nbr, int num, t_dir dir) //currently 33 lines
 {
-    if (nbr == num) //ends fn
+    if (ft_final_print(map, nbr, num, dir) == 0)//ends fn
         return (0);
     dir.x = 0;
     while (dir.x < dir.ms) //x is vertical
@@ -87,12 +87,10 @@ int     ft_bt(char **map, int ***array, int nbr, int num, t_dir dir) //currently
             if (ft_ispossible(map, array[nbr], dir) == 0) //if it's possible to place the current tetris (if no overlap and within map's border)
             {
                 ft_test_fill_tetri(map, array[nbr], nbr, dir); //fills current tetris onto the map
-				ft_print_map(map, dir);
-                if (ft_bt(map, array, nbr + 1, num, dir) == 0) //it will repeat this recursive fn for the next tetris
+                if (ft_bt(map, array, nbr + 1, num, dir) == 0)
                     return (0);
                 else
                     ft_remove_tet(map, array[nbr], dir); //replaces current tetris' output with dots to clear the map
-				ft_print_map(map, dir);
             }
             dir.y++; //after the else statement, it will try to fill the tetris by moving one place horizontally
         }
@@ -103,7 +101,13 @@ int     ft_bt(char **map, int ***array, int nbr, int num, t_dir dir) //currently
         map = ft_upsize_map(++dir.ms, map);
         return (ft_bt(map, array, 0, num, dir));
     }
-    return (-1);
+	return (-1);
+}
+
+void		ft_lol(char **map, int ***array, int nbr, int num, t_dir dir)
+{
+	if (ft_bt(map, array, nbr, num, dir) == 0)
+		ft_print_map(map, dir);
 }
 
 int             main(int ac, char **av)
@@ -127,17 +131,11 @@ int             main(int ac, char **av)
     //  t_pos       block;
     //  int         i = 0;i
     dir.ms = 2;
-    int     j = 0;
+ //   int     j = 0;
 	dir.x = 0;
 	dir.y = 0;
     array = ft_stocktetri(tab, number);
     char        **map = ft_makemap(2);
-    printf("\033[1;33mMap:\033[0m\n");
-    while (j < dir.ms)
-    {
-        printf("%s\n", map[j]);
-        j++;
-    }
-    ft_bt(map, array, nbr, number, dir);
+	ft_bt(map, array, nbr, number, dir);
     return (0);
 }

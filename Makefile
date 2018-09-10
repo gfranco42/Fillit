@@ -6,7 +6,7 @@
 #    By: gfranco <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/06/01 18:05:34 by gfranco           #+#    #+#              #
-#    Updated: 2018/09/10 14:13:53 by gfranco          ###   ########.fr        #
+#    Updated: 2018/09/10 16:53:29 by gfranco          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,6 +27,7 @@ SRC = ft_borderline.c         \
 	  ft_file_cpy.c           \
 	  ft_file_split.c         \
 	  ft_fill_tetri.c         \
+	  ft_final_print.c        \
 	  ft_makemap.c            \
 	  ft_memalloc.c           \
 	  ft_memset.c             \
@@ -35,6 +36,7 @@ SRC = ft_borderline.c         \
 	  ft_prtcpy.c             \
 	  ft_stockblocks.c        \
 	  ft_stocktetri.c         \
+	  ft_strcpy.c             \
 	  ft_strlen.c             \
 	  ft_strncpy.c            \
 	  ft_strsplit.c           \

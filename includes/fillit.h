@@ -6,7 +6,7 @@
 /*   By: gfranco <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/18 12:00:06 by gfranco           #+#    #+#             */
-/*   Updated: 2018/09/10 14:30:43 by gfranco          ###   ########.fr       */
+/*   Updated: 2018/09/10 16:55:15 by gfranco          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,6 +75,8 @@ char				**ft_fill_tetri(char **map, int **array, int n);
 char				**ft_makemap(int size);
 int					ft_move_piece(char**map, int **array);
 int					ft_overlap(char **map, int **array);
+int					ft_final_print(char **map, int nbr, int num, t_dir dir);
+int					ft_print_map(char **map, t_dir dir);
 t_pos				ft_stockblocks(char *str);
 int					***ft_stocktetri(char **str, int nbr);
 char				**ft_strsplit(char const *s, char c);
