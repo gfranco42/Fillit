@@ -6,7 +6,7 @@
 /*   By: gfranco <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/18 12:00:06 by gfranco           #+#    #+#             */
-/*   Updated: 2018/09/13 14:42:24 by gfranco          ###   ########.fr       */
+/*   Updated: 2018/09/16 16:04:45 by gfranco          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,11 +36,12 @@ typedef struct		s_dir
 int					ft_bt(char **map, int ***array, int nbr, t_dir dir);
 int					ft_check(char *str);
 size_t				ft_counttetri(char *str);
-int					ft_is_near(char **array, int nbr);
 char				*ft_file_cpy(int ac, char **av);
 char				**ft_file_split(char *str);
 int					ft_final_print(char **map, int num, t_dir dir);
 char				**ft_free_tab(char **tab, t_dir dir);
+int					ft_is_near(char **array, int nbr);
+int					ft_just_one(char *str);
 char				**ft_makemap(int size);
 int					ft_print_map(char **map, int nbr, t_dir dir);
 t_pos				ft_stockblocks(char *str);

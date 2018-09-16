@@ -6,7 +6,7 @@
 /*   By: gfranco <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/28 14:09:13 by gfranco           #+#    #+#             */
-/*   Updated: 2018/09/13 14:44:47 by gfranco          ###   ########.fr       */
+/*   Updated: 2018/09/16 16:35:49 by gfranco          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,7 @@ t_pos		ft_stockblocks(char *str)
 	j = 0;
 	while (j < 4)
 	{
-		while (str[i] != '#')
+		while (str[i] != '#' && i < 20)
 			i++;
 		block.x[j] = i / 5;
 		block.y[j] = i % 5;

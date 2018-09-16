@@ -6,7 +6,7 @@
 /*   By: gfranco <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/18 11:36:58 by gfranco           #+#    #+#             */
-/*   Updated: 2018/09/13 15:02:39 by gfranco          ###   ########.fr       */
+/*   Updated: 2018/09/16 16:36:12 by gfranco          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,6 +103,8 @@ int			main(int ac, char **av)
 		write(1, "error\n", 6);
 		return (0);
 	}
+	if (dir.num == 1 && ft_just_one(str) == 0)
+		return (0);
 	array = ft_stocktetri(tab, dir.num);
 	ft_free_tab(tab, dir);
 	tab = ft_makemap(2);

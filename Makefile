@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: jdesmare <marvin@42.fr>                    +#+  +:+       +#+         #
+#    By: gfranco <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2016/11/11 10:38:56 by jdesmare          #+#    #+#              #
-#*   Updated: 2016/11/25 15:20:27 by jdesmare         ###   ########.fr       *#
+#    Created: 2018/09/16 15:43:47 by gfranco           #+#    #+#              #
+#    Updated: 2018/09/16 17:53:54 by gfranco          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,34 +26,24 @@ SRC = main.c             \
 	  ft_final_print.c   \
 	  ft_free_tab.c      \
 	  ft_is_near.c       \
+	  ft_just_one.c      \
 	  ft_makemap.c       \
 	  ft_prtcpy.c        \
 	  ft_stockblocks.c   \
 	  ft_stocktetri.c    \
 	  ft_upsize_map.c    \
 
-
-#	  ft_borderline.c    \
-	  ft_overlap.c       \
-	  ft_fill_tetri.c    \
-	  ft_move_piece.c    \
-
 OBJ = $(SRC:.c=.o)
 
 all: $(NAME)
 
 $(NAME):
-	@make -C ./libft/
-	@$(CC) $(CFLAGS) -I$(INCLUDES) -c $(SRC)
-	@$(CC) $(CFLAGS) -L./libft/ -lft $(OBJ) -o $(NAME)
-	@clear
-	@echo "       \033[1;34m                boing         boing"
-	@echo "        \033[1;32m e-e\033[1;31m           . - .         . - .     "
-	@echo "        \033[1;32m(\_/)\ \033[1;31m      '       '.   ,'       '.  "
-	@echo "         \033[1;32m'-'\ '--.___,\033[1;31m         . .           . "
-	@echo "          \033[1;32m'\( ,_.-'\033[1;31m             v             ."
-	@echo "              \033[1;32m\ \ \033[1;31m              .             ."
-	@echo "          \033[1;32m^'^'\033[1;31m"
+	make -C ./libft/
+	$(CC) $(CFLAGS) -I$(INCLUDES) -c $(SRC)
+	$(CC) $(CFLAGS) -L./libft/ -lft $(OBJ) -o $(NAME)
+
+%.o : %.c
+	gcc -c $< -o $@
 
 clean:
 	@make clean -C ./libft/

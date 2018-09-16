@@ -6,7 +6,7 @@
 #    By: gfranco <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/06/01 18:05:34 by gfranco           #+#    #+#              #
-#    Updated: 2018/06/05 11:16:11 by gfranco          ###   ########.fr        #
+#    Updated: 2018/09/16 17:54:10 by gfranco          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -83,16 +83,12 @@ SRC = ft_atoi.c                \
 
 OBJ = $(SRC:.c=.o)
 
-INC = libft.h
-
 all: $(NAME)
 
 $(NAME): $(OBJ)
+	@$(CC) $(CFLAGS) -c $(SRC)
 	@ar rc $(NAME) $(OBJ)
 	@ranlib $(NAME)
-
-$(OBJ_PATH)%.o: $(SRC_PATH)%.c $(INC)
-	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
 	@rm -f $(OBJ)
