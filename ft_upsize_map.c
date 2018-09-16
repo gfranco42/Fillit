@@ -1,27 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_final_print.c                                   :+:      :+:    :+:   */
+/*   ft_upsize_map.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gfranco <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/09/10 16:50:03 by gfranco           #+#    #+#             */
-/*   Updated: 2018/09/13 14:43:34 by gfranco          ###   ########.fr       */
+/*   Created: 2018/09/07 15:12:17 by gfranco           #+#    #+#             */
+/*   Updated: 2018/09/13 14:45:14 by gfranco          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "includes/fillit.h"
 
-int			ft_final_print(char **map, int nbr, t_dir dir)
+char	**ft_upsize_map(int size, char **map)
 {
-	int		j;
+	int	i;
 
-	j = 0;
-	if (nbr == dir.num)
+	i = 0;
+	while (i < size - 1)
 	{
-		while (j < dir.ms)
-			ft_putendl(map[j++]);
-		return (0);
+		free(map[i]);
+		i++;
 	}
-	return (1);
+	free(map);
+	map = NULL;
+	map = ft_makemap(size);
+	return (map);
 }

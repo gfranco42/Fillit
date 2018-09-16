@@ -1,27 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_final_print.c                                   :+:      :+:    :+:   */
+/*   ft_strncpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gfranco <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/09/10 16:50:03 by gfranco           #+#    #+#             */
-/*   Updated: 2018/09/13 14:43:34 by gfranco          ###   ########.fr       */
+/*   Created: 2018/04/17 11:52:57 by gfranco           #+#    #+#             */
+/*   Updated: 2018/09/13 14:44:34 by gfranco          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "includes/fillit.h"
 
-int			ft_final_print(char **map, int nbr, t_dir dir)
+char			*ft_prtcpy(char *dst, const char *src, size_t n, size_t save)
 {
-	int		j;
+	size_t		a;
 
-	j = 0;
-	if (nbr == dir.num)
+	a = 0;
+	while (a < n && src[save] != '\0')
 	{
-		while (j < dir.ms)
-			ft_putendl(map[j++]);
-		return (0);
+		dst[a] = src[save];
+		a++;
+		save++;
 	}
-	return (1);
+	while (a < n)
+	{
+		dst[a] = '\0';
+		a++;
+	}
+	return (dst);
 }

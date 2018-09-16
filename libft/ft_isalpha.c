@@ -1,27 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_final_print.c                                   :+:      :+:    :+:   */
+/*   ft_isalpha.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gfranco <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/09/10 16:50:03 by gfranco           #+#    #+#             */
-/*   Updated: 2018/09/13 14:43:34 by gfranco          ###   ########.fr       */
+/*   Created: 2018/04/27 14:45:45 by gfranco           #+#    #+#             */
+/*   Updated: 2018/04/27 15:08:16 by gfranco          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/fillit.h"
+#include "libft.h"
 
-int			ft_final_print(char **map, int nbr, t_dir dir)
+int		ft_isalpha(int c)
 {
-	int		j;
-
-	j = 0;
-	if (nbr == dir.num)
-	{
-		while (j < dir.ms)
-			ft_putendl(map[j++]);
+	if ((c > 64 && c < 91) || (c > 96 && c < 123))
+		return (1);
+	else
 		return (0);
-	}
-	return (1);
 }

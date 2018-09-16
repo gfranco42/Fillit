@@ -1,27 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_final_print.c                                   :+:      :+:    :+:   */
+/*   ft_makemap.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gfranco <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/09/10 16:50:03 by gfranco           #+#    #+#             */
-/*   Updated: 2018/09/13 14:43:34 by gfranco          ###   ########.fr       */
+/*   Created: 2018/08/21 14:02:05 by gfranco           #+#    #+#             */
+/*   Updated: 2018/09/13 14:44:04 by gfranco          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "includes/fillit.h"
 
-int			ft_final_print(char **map, int nbr, t_dir dir)
+char		**ft_makemap(int size)
 {
-	int		j;
+	int		i;
+	int		count;
+	int		len;
+	char	*str;
 
-	j = 0;
-	if (nbr == dir.num)
+	i = 0;
+	count = 0;
+	len = size * (size + 1) + 1;
+	str = (char*)ft_memalloc(len);
+	while (i < len - 1)
 	{
-		while (j < dir.ms)
-			ft_putendl(map[j++]);
-		return (0);
+		while (count++ < size)
+			str[i++] = '.';
+		str[i++] = '\n';
+		count = 0;
 	}
-	return (1);
+	str[i] = '\0';
+	return (ft_strsplit(str, '\n'));
 }

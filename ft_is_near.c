@@ -1,27 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_final_print.c                                   :+:      :+:    :+:   */
+/*   ft_check.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gfranco <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/09/10 16:50:03 by gfranco           #+#    #+#             */
-/*   Updated: 2018/09/13 14:43:34 by gfranco          ###   ########.fr       */
+/*   Created: 2018/07/15 14:19:12 by gfranco           #+#    #+#             */
+/*   Updated: 2018/09/13 14:41:22 by gfranco          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "includes/fillit.h"
 
-int			ft_final_print(char **map, int nbr, t_dir dir)
+int		ft_is_near(char **array, int nbr)
 {
+	int		i;
 	int		j;
+	int		count;
 
-	j = 0;
-	if (nbr == dir.num)
+	i = 0;
+	while (i < nbr)
 	{
-		while (j < dir.ms)
-			ft_putendl(map[j++]);
-		return (0);
+		count = 0;
+		j = 0;
+		while (array[i][j])
+		{
+			if (array[i][j] == '#' && array[i][j + 1] == '#')
+				count++;
+			if (array[i][j] == '#' && array[i][j + 5] == '#')
+				count++;
+			j++;
+		}
+		if (count != 3 && (count - 1) != 3)
+			return (1);
+		if ((count - 1) % 3 == 0)
+			count--;
+		i++;
 	}
-	return (1);
+	return (count % 3);
 }

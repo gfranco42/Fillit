@@ -1,27 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_final_print.c                                   :+:      :+:    :+:   */
+/*   ft_file_cpy.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gfranco <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/09/10 16:50:03 by gfranco           #+#    #+#             */
-/*   Updated: 2018/09/13 14:43:34 by gfranco          ###   ########.fr       */
+/*   Created: 2018/07/11 14:28:12 by gfranco           #+#    #+#             */
+/*   Updated: 2018/09/13 14:58:23 by gfranco          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "includes/fillit.h"
+#define B_SIZE 4096
 
-int			ft_final_print(char **map, int nbr, t_dir dir)
+char	*ft_file_cpy(int ac, char **av)
 {
-	int		j;
+	char	buf[B_SIZE + 1];
+	char	*str;
+	int		res;
+	int		fd;
 
-	j = 0;
-	if (nbr == dir.num)
+	fd = open(av[1], O_RDONLY);
+	if (ac != 2)
 	{
-		while (j < dir.ms)
-			ft_putendl(map[j++]);
+		write(2, "usage: ./fillit target_file\n", 28);
 		return (0);
 	}
-	return (1);
+	res = read(fd, buf, B_SIZE);
+	if (!(str = (char *)malloc(sizeof(char *) * res + 1)))
+		return (NULL);
+	ft_strcpy(str, (const char*)buf);
+	close(fd);
+	return (str);
 }

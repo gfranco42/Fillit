@@ -1,27 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_final_print.c                                   :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gfranco <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/09/10 16:50:03 by gfranco           #+#    #+#             */
-/*   Updated: 2018/09/13 14:43:34 by gfranco          ###   ########.fr       */
+/*   Created: 2018/04/27 10:59:43 by gfranco           #+#    #+#             */
+/*   Updated: 2018/08/07 15:22:50 by gfranco          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/fillit.h"
+#include "libft.h"
 
-int			ft_final_print(char **map, int nbr, t_dir dir)
+int			ft_atoi(const char *str)
 {
-	int		j;
+	long	ret;
+	int		sign;
+	int		idx;
 
-	j = 0;
-	if (nbr == dir.num)
-	{
-		while (j < dir.ms)
-			ft_putendl(map[j++]);
-		return (0);
-	}
-	return (1);
+	ret = 0;
+	idx = 0;
+	while (ft_isspace(str[idx]))
+		idx++;
+	sign = str[idx] == '-' ? -1 : 1;
+	if (str[idx] == '+' || str[idx] == '-')
+		idx++;
+	while (ft_isdigit(str[idx]))
+		ret = ret * 10 + str[idx++] - '0';
+	return ((int)ret * sign);
 }

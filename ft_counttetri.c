@@ -1,27 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_final_print.c                                   :+:      :+:    :+:   */
+/*   ft_counttetri.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gfranco <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/09/10 16:50:03 by gfranco           #+#    #+#             */
-/*   Updated: 2018/09/13 14:43:34 by gfranco          ###   ########.fr       */
+/*   Created: 2018/07/04 13:06:53 by gfranco           #+#    #+#             */
+/*   Updated: 2018/09/13 14:42:57 by gfranco          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "includes/fillit.h"
 
-int			ft_final_print(char **map, int nbr, t_dir dir)
+size_t	ft_counttetri(char *str)
 {
-	int		j;
+	size_t	len;
 
-	j = 0;
-	if (nbr == dir.num)
-	{
-		while (j < dir.ms)
-			ft_putendl(map[j++]);
-		return (0);
-	}
-	return (1);
+	len = ft_strlen(str);
+	if ((len + 1) % 21 == 0)
+		return ((len + 1) / 21);
+	return (0);
 }
